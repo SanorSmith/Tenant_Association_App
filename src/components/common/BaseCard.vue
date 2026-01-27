@@ -29,11 +29,11 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const cardClasses = computed(() => {
-  const base = 'bg-surface rounded-lg overflow-hidden';
+  const base = 'bg-surface rounded-xl overflow-hidden transition-all duration-300';
   const variants = {
-    default: 'border border-border',
-    outlined: 'border-2 border-border',
-    elevated: 'shadow-md',
+    default: 'border border-border shadow-sm hover:shadow-md',
+    outlined: 'border-2 border-border hover:border-primary',
+    elevated: 'shadow-lg hover:shadow-xl hover:-translate-y-1',
   };
   return `${base} ${variants[props.variant]}`;
 });
