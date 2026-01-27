@@ -666,9 +666,12 @@ export const useMockDataStore = defineStore('mockData', () => {
     });
   };
 
-  // Get premises by association
-  const getPremisesByAssociation = (associationId: string) => {
-    return premises.value.filter(p => p.associationId === associationId && p.isPublic);
+  // Get premises by association (for booking from association page - shows all premises)
+  const getPremisesByAssociation = (associationId: string, publicOnly: boolean = false) => {
+    if (publicOnly) {
+      return premises.value.filter(p => p.associationId === associationId && p.isPublic);
+    }
+    return premises.value.filter(p => p.associationId === associationId);
   };
 
   // Get premises by ID
