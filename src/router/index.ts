@@ -5,12 +5,21 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/dashboard',
+      name: 'Landing',
+      component: () => import('../views/public/LandingView.vue'),
+      meta: { requiresAuth: false, public: true },
+    },
+    {
+      path: '/association/:id/public',
+      name: 'PublicAssociation',
+      component: () => import('../views/public/PublicAssociationView.vue'),
+      meta: { requiresAuth: false, public: true },
     },
     {
       path: '/login',
       name: 'Login',
       component: () => import('../views/auth/LoginView.vue'),
+      meta: { requiresAuth: false },
     },
     {
       path: '/register',
@@ -121,6 +130,36 @@ const router = createRouter({
       path: '/test',
       name: 'Test',
       component: () => import('../views/TestView.vue'),
+    },
+    {
+      path: '/info/om-oss',
+      name: 'OmOss',
+      component: () => import('../views/info/OmOssView.vue'),
+    },
+    {
+      path: '/info/kontakt',
+      name: 'Kontakt',
+      component: () => import('../views/info/KontaktView.vue'),
+    },
+    {
+      path: '/info/support',
+      name: 'Support',
+      component: () => import('../views/info/SupportView.vue'),
+    },
+    {
+      path: '/info/integritetspolicy',
+      name: 'Integritetspolicy',
+      component: () => import('../views/info/IntegritetspolicyView.vue'),
+    },
+    {
+      path: '/info/anvandarvillkor',
+      name: 'Anvandarvillkor',
+      component: () => import('../views/info/AnvandarvillkorView.vue'),
+    },
+    {
+      path: '/info/cookies',
+      name: 'Cookies',
+      component: () => import('../views/info/CookiesView.vue'),
     },
     {
       path: '/:pathMatch(.*)*',

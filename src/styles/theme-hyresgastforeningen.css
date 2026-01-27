@@ -1,0 +1,286 @@
+/* HYRESGÄSTFÖRENINGEN THEME - Official Brand Colors */
+/* Extracted from https://www.hyresgastforeningen.se/ */
+
+:root {
+  /* ========================================
+     OFFICIAL BRAND COLORS
+     ======================================== */
+  --hgf-blue: #0066B3;
+  --hgf-blue-dark: #004B87;
+  --hgf-blue-light: #3399CC;
+  --hgf-green: #00A651;
+  --hgf-green-dark: #008040;
+  --hgf-yellow: #FFB81C;
+  --hgf-red: #E30613;
+  
+  /* Neutral Colors */
+  --hgf-gray-dark: #333333;
+  --hgf-gray-medium: #666666;
+  --hgf-gray-light: #CCCCCC;
+  --hgf-gray-bg: #F5F5F5;
+  --hgf-white: #FFFFFF;
+  
+  /* ========================================
+     THEME VARIABLES (Updated)
+     ======================================== */
+  --color-primary: var(--hgf-blue);
+  --color-primary-dark: var(--hgf-blue-dark);
+  --color-primary-light: var(--hgf-blue-light);
+  --color-secondary: var(--hgf-green);
+  --color-secondary-dark: var(--hgf-green-dark);
+  --color-accent: var(--hgf-yellow);
+  --color-error: var(--hgf-red);
+  --color-danger: var(--hgf-red);
+  
+  --color-background: var(--hgf-gray-bg);
+  --color-background-secondary: var(--hgf-white);
+  --color-surface: var(--hgf-white);
+  --color-sidebar: var(--hgf-blue-dark);
+  
+  --color-text-primary: var(--hgf-gray-dark);
+  --color-text-secondary: var(--hgf-gray-medium);
+  --color-text-tertiary: var(--hgf-gray-light);
+  --color-text-on-primary: var(--hgf-white);
+  
+  --color-border: var(--hgf-gray-light);
+  --color-success: var(--hgf-green);
+  --color-warning: var(--hgf-yellow);
+  --color-info: var(--hgf-blue);
+  
+  /* Chart colors */
+  --chart-blue: var(--hgf-blue);
+  --chart-green: var(--hgf-green);
+  --chart-yellow: var(--hgf-yellow);
+  --chart-gray: var(--hgf-gray-light);
+  --chart-red: var(--hgf-red);
+}
+
+/* Button Styles with HGF Colors */
+.btn-primary {
+  background-color: var(--hgf-blue);
+  color: var(--hgf-white);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--hgf-blue-dark);
+}
+
+.btn-secondary {
+  background-color: var(--hgf-green);
+  color: var(--hgf-white);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--hgf-green-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--hgf-blue);
+  color: var(--hgf-white);
+}
+
+/* Link Styles */
+a {
+  color: var(--hgf-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hgf-blue-dark);
+  text-decoration: underline;
+}
+
+/* Header Styles */
+.app-header {
+  background-color: var(--hgf-blue);
+  color: var(--hgf-white);
+}
+
+/* Sidebar Styles */
+.app-sidebar {
+  background-color: var(--hgf-blue-dark);
+  color: var(--hgf-white);
+}
+
+/* Alert Styles */
+.alert-success {
+  background-color: rgba(0, 166, 81, 0.1);
+  border-left: 4px solid var(--hgf-green);
+  color: var(--hgf-green-dark);
+}
+
+.alert-warning {
+  background-color: rgba(255, 184, 28, 0.1);
+  border-left: 4px solid var(--hgf-yellow);
+  color: #996A00;
+}
+
+.alert-error {
+  background-color: rgba(227, 6, 19, 0.1);
+  border-left: 4px solid var(--hgf-red);
+  color: #A00000;
+}
+
+.alert-info {
+  background-color: rgba(0, 102, 179, 0.1);
+  border-left: 4px solid var(--hgf-blue);
+  color: var(--hgf-blue-dark);
+}
+
+/* Badge Styles */
+.badge-primary {
+  background-color: var(--hgf-blue);
+  color: var(--hgf-white);
+}
+
+.badge-success {
+  background-color: var(--hgf-green);
+  color: var(--hgf-white);
+}
+
+.badge-warning {
+  background-color: var(--hgf-yellow);
+  color: var(--hgf-gray-dark);
+}
+
+.badge-danger {
+  background-color: var(--hgf-red);
+  color: var(--hgf-white);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--hgf-white);
+  border: 1px solid var(--hgf-gray-light);
+  border-radius: 8px;
+}
+
+.card:hover {
+  border-color: var(--hgf-blue);
+  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.15);
+}
+
+/* Form Input Styles */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--hgf-blue);
+  box-shadow: 0 0 0 3px rgba(0, 102, 179, 0.1);
+}
+
+/* Loading Spinner */
+.spinner {
+  border-color: var(--hgf-gray-light);
+  border-top-color: var(--hgf-blue);
+}
+
+/* Progress Bar */
+.progress-bar {
+  background-color: var(--hgf-green);
+}
+
+/* Table Styles */
+.table-header {
+  background-color: var(--hgf-gray-bg);
+  color: var(--hgf-gray-dark);
+  border-bottom: 2px solid var(--hgf-blue);
+}
+
+.table-row:hover {
+  background-color: rgba(0, 102, 179, 0.05);
+}
+
+/* Navigation Styles */
+.nav-link {
+  color: var(--hgf-gray-medium);
+}
+
+.nav-link:hover {
+  color: var(--hgf-blue);
+}
+
+.nav-link.active {
+  color: var(--hgf-blue);
+  border-bottom: 2px solid var(--hgf-blue);
+}
+
+/* Tab Styles */
+.tab {
+  color: var(--hgf-gray-medium);
+  border-bottom: 2px solid transparent;
+}
+
+.tab:hover {
+  color: var(--hgf-blue);
+}
+
+.tab.active {
+  color: var(--hgf-blue);
+  border-bottom-color: var(--hgf-blue);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--hgf-white);
+  border-radius: 12px;
+}
+
+/* Footer Styles */
+.app-footer {
+  background-color: var(--hgf-gray-dark);
+  color: var(--hgf-white);
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--hgf-blue) !important;
+}
+
+.text-secondary {
+  color: var(--hgf-green) !important;
+}
+
+.text-success {
+  color: var(--hgf-green) !important;
+}
+
+.text-warning {
+  color: var(--hgf-yellow) !important;
+}
+
+.text-danger {
+  color: var(--hgf-red) !important;
+}
+
+.bg-primary {
+  background-color: var(--hgf-blue) !important;
+}
+
+.bg-secondary {
+  background-color: var(--hgf-green) !important;
+}
+
+.bg-light {
+  background-color: var(--hgf-gray-bg) !important;
+}
+
+.border-primary {
+  border-color: var(--hgf-blue) !important;
+}
+
+.border-secondary {
+  border-color: var(--hgf-green) !important;
+}

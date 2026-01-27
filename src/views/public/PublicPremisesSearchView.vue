@@ -60,6 +60,9 @@
       :premises="selectedPremises"
       @booking-submitted="handleBookingSubmitted"
     />
+
+    <!-- Footer -->
+    <AppFooter />
   </div>
 </template>
 
@@ -71,6 +74,7 @@ import BaseInput from '../../components/common/BaseInput.vue';
 import BaseSelect from '../../components/common/BaseSelect.vue';
 import PublicPremisesCard from '../../components/public/PublicPremisesCard.vue';
 import PublicBookingModal from '../../components/modals/PublicBookingModal.vue';
+import AppFooter from '../../components/layout/AppFooter.vue';
 import { useMockDataStore } from '../../stores/mockData';
 import type { Premises } from '../../types';
 

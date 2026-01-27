@@ -152,17 +152,12 @@ const reviewBooking = (booking: Booking) => {
 };
 
 const approveBooking = (bookingId: string) => {
-  const booking = bookings.value.find(b => b.id === bookingId);
-  if (booking) {
-    booking.status = 'approved';
-  }
+  mockDataStore.approveBooking(bookingId, mockDataStore.currentUser.fullName);
 };
 
 const rejectBooking = (bookingId: string) => {
-  const booking = bookings.value.find(b => b.id === bookingId);
-  if (booking) {
-    booking.status = 'rejected';
-  }
+  const reason = prompt('Ange anledning till avslag (valfritt):');
+  mockDataStore.rejectBooking(bookingId, mockDataStore.currentUser.fullName, reason || 'Ingen anledning angiven');
 };
 
 const contactRequester = (booking: Booking) => {

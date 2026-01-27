@@ -47,4 +47,18 @@ const sidebarOpen = ref(false);
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
+/* Ensure footer is always visible and not hidden behind sidebar */
+.main-layout :deep(.app-footer) {
+  margin-left: 0;
+  transition: margin-left var(--transition-base);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .main-layout :deep(.app-footer) {
+    margin-left: 280px;
+  }
+}
 </style>

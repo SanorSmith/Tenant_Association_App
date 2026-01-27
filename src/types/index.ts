@@ -13,6 +13,12 @@ export interface Association {
   id: string;
   name: string;
   address: string;
+  postcode?: string;
+  city?: string;
+  area?: string;
+  latitude?: number;
+  longitude?: number;
+  description?: string;
   registrationNumber: string;
   verified: boolean;
 }
@@ -63,9 +69,13 @@ export interface Activity {
   associationId: string;
   title: string;
   description: string;
-  activityDate: Date;
+  activityDate: Date | string;
   location?: string;
+  imageUrl: string | null;
+  category: 'event' | 'news' | 'meeting' | 'announcement';
+  isPublic: boolean;
   status: 'planned' | 'ongoing' | 'completed' | 'cancelled';
+  createdAt: Date | string;
 }
 
 export interface Premises {
@@ -78,6 +88,7 @@ export interface Premises {
   rules: string;
   capacity: number;
   isPublic: boolean;
+  customMessage?: string;
 }
 
 export interface Booking {
@@ -91,6 +102,57 @@ export interface Booking {
   endTime: string;
   purpose: string;
   status: 'pending' | 'approved' | 'rejected' | 'cancelled';
+  submittedAt: Date | string;
+  customConfirmation?: string;
   reviewedBy?: string;
   reviewedAt?: Date;
+  rejectionReason?: string;
+}
+
+export interface Proposal {
+  id: string;
+  associationId: string;
+  submitterName: string;
+  submitterEmail: string;
+  submitterPhone: string;
+  title: string;
+  description: string;
+  category: 'improvement' | 'event' | 'maintenance' | 'other';
+  status: 'pending' | 'under_review' | 'approved' | 'rejected';
+  submittedAt: Date | string;
+  reviewedBy?: string;
+  reviewedAt?: Date | string;
+}
+
+export interface AssociationRequest {
+  id: string;
+  organizationName: string;
+  contactName: string;
+  contactEmail: string;
+  contactPhone: string;
+  address: string;
+  postcode: string;
+  city: string;
+  numberOfMembers: number;
+  description: string;
+  status: 'pending' | 'under_review' | 'approved' | 'rejected';
+  submittedAt: Date | string;
+  reviewedBy?: string;
+  reviewedAt?: Date | string;
+}
+
+export interface MembershipApplication {
+  id: string;
+  associationId: string;
+  applicantName: string;
+  applicantEmail: string;
+  applicantPhone: string;
+  address: string;
+  motivation: string;
+  skills: string;
+  availability: 'weekdays' | 'weekends' | 'evenings' | 'flexible';
+  status: 'pending' | 'approved' | 'rejected';
+  submittedAt: Date | string;
+  reviewedBy?: string;
+  reviewedAt?: Date | string;
 }
