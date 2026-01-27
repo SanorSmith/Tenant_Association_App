@@ -668,10 +668,16 @@ export const useMockDataStore = defineStore('mockData', () => {
 
   // Get premises by association (for booking from association page - shows all premises)
   const getPremisesByAssociation = (associationId: string, publicOnly: boolean = false) => {
+    console.log('🏢 Store - Getting premises for association:', associationId, 'publicOnly:', publicOnly);
+    console.log('🏢 Store - All premises:', premises.value);
     if (publicOnly) {
-      return premises.value.filter(p => p.associationId === associationId && p.isPublic);
+      const filtered = premises.value.filter(p => p.associationId === associationId && p.isPublic);
+      console.log('🏢 Store - Filtered (public only):', filtered);
+      return filtered;
     }
-    return premises.value.filter(p => p.associationId === associationId);
+    const filtered = premises.value.filter(p => p.associationId === associationId);
+    console.log('🏢 Store - Filtered (all):', filtered);
+    return filtered;
   };
 
   // Get premises by ID
