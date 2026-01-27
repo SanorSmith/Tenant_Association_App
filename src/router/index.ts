@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'Landing',
-      component: () => import('../views/public/LandingView.vue'),
+      component: () => import('../views/LandingPage.vue'),
       meta: { requiresAuth: false, public: true },
     },
     {
