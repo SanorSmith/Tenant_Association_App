@@ -341,7 +341,8 @@ onMounted(() => {
 
 <style scoped>
 .dashboard-view {
-  width: 100%;
+  padding: 0;
+  background: var(--hgf-gray-bg);
 }
 
 .dashboard-header {
@@ -351,6 +352,19 @@ onMounted(() => {
   margin-bottom: 2rem;
   flex-wrap: wrap;
   gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--hgf-blue) 0%, var(--hgf-blue-dark) 100%);
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.2);
+}
+
+.dashboard-header h1 {
+  color: white !important;
+}
+
+.dashboard-header p {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .quick-actions {
@@ -367,12 +381,18 @@ onMounted(() => {
 }
 
 .stat-card {
-  cursor: pointer;
-  transition: transform var(--transition-fast);
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .stat-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 102, 179, 0.15);
+  border-color: var(--hgf-blue);
 }
 
 .stat-content {
@@ -384,7 +404,7 @@ onMounted(() => {
 .stat-icon {
   width: 3rem;
   height: 3rem;
-  border-radius: var(--radius-lg);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -392,14 +412,14 @@ onMounted(() => {
 
 .stat-label {
   font-size: 0.875rem;
-  color: var(--color-text-secondary);
+  color: var(--hgf-gray-medium);
   margin-bottom: 0.25rem;
 }
 
 .stat-value {
   font-size: 1.875rem;
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
+  color: var(--hgf-gray-dark);
 }
 
 .dashboard-content {

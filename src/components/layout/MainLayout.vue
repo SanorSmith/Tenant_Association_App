@@ -27,6 +27,7 @@ const sidebarOpen = ref(false);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--hgf-gray-bg);
 }
 
 .main-content {
@@ -34,6 +35,7 @@ const sidebarOpen = ref(false);
   margin-top: 4rem;
   padding-left: 0;
   transition: padding-left var(--transition-base);
+  background: var(--hgf-gray-bg);
 }
 
 @media (min-width: 768px) {
