@@ -48,9 +48,14 @@ export const useMockDataStore = defineStore('mockData', () => {
       area: 'Storvreta',
       latitude: 59.943,
       longitude: 17.732,
-      description: 'Lokal hyresgästförening för Storvreta området i Uppsala',
+      description: 'Lokal hyresgästförening för Storvreta med fokus på trygg och trivsam boendemiljö',
+      missionStatement: 'Vi arbetar för bättre boendemiljö i Storvreta genom aktivt medlemsengagemang, dialog med fastighetsägare och regelbundna aktiviteter som stärker gemenskapen i området.',
+      customBookingInstructions: 'Nycklar hämtas på Storvreta bibliotek mellan kl 10:00-18:00. Återlämning senast kl 12:00 dagen efter. Ta med giltig legitimation och bokningsbekräftelse. Kontakta oss på 018-123 4567 vid frågor.',
       registrationNumber: 'HGF-2024-001',
       verified: true,
+      contactEmail: 'info@storvreta-hg.se',
+      contactPhone: '018-123 4567',
+      memberCount: 1024,
     },
     {
       id: 'assoc-2',
@@ -61,9 +66,14 @@ export const useMockDataStore = defineStore('mockData', () => {
       area: 'Gottsunda',
       latitude: 59.831,
       longitude: 17.698,
-      description: 'Hyresgästförening för Gottsunda med mål att förbättra boendemiljön',
+      description: 'Hyresgästförening för Gottsunda med mål att förbättra boendemiljön och skapa gemenskap',
+      missionStatement: 'Tillsammans skapar vi ett bättre Gottsunda där alla känner sig trygga och välkomna.',
+      customBookingInstructions: 'Nyckel finns hos väktaren vid huvudentrén. Öppettider vardagar 08:00-20:00. Vid bokning på helg, kontakta oss minst 3 dagar i förväg.',
       registrationNumber: 'HGF-2024-002',
       verified: true,
+      contactEmail: 'info@gottsunda-hg.se',
+      contactPhone: '018-234 5678',
+      memberCount: 856,
     },
     {
       id: 'assoc-3',
@@ -74,9 +84,14 @@ export const useMockDataStore = defineStore('mockData', () => {
       area: 'Kungsängen',
       latitude: 59.858,
       longitude: 17.638,
-      description: 'Vi arbetar för bättre boende i Kungsängen',
+      description: 'Vi arbetar för bättre boende i Kungsängen med fokus på gemenskap och trivsel',
+      missionStatement: 'Kungsängens hyresgäster - för ett tryggare och trevligare boende.',
+      customBookingInstructions: 'Nyckel hämtas hos vaktmästaren. Ring 018-345 6789 för tidsbokning.',
       registrationNumber: 'HGF-2024-003',
       verified: true,
+      contactEmail: 'info@kungsangen-hg.se',
+      contactPhone: '018-345 6789',
+      memberCount: 654,
     },
     {
       id: 'assoc-4',
@@ -87,9 +102,14 @@ export const useMockDataStore = defineStore('mockData', () => {
       area: 'Eriksberg',
       latitude: 59.843,
       longitude: 17.623,
-      description: 'Lokala hyresgäster som engagerar sig för området',
+      description: 'Lokala hyresgäster som engagerar sig för området och dess invånare',
+      missionStatement: 'Eriksberg - där alla är välkomna och alla bidrar till gemenskapen.',
+      customBookingInstructions: 'Kontakta styrelsen för nyckelutlämning minst 2 dagar före bokning.',
       registrationNumber: 'HGF-2024-004',
       verified: true,
+      contactEmail: 'info@eriksberg-hg.se',
+      contactPhone: '018-456 7890',
+      memberCount: 432,
     },
     {
       id: 'assoc-5',
@@ -100,9 +120,14 @@ export const useMockDataStore = defineStore('mockData', () => {
       area: 'Stenhagen',
       latitude: 59.872,
       longitude: 17.627,
-      description: 'Hyresgästförening för Stenhagen och omnejd',
+      description: 'Hyresgästförening för Stenhagen med målet att skapa bättre boende för alla',
+      missionStatement: 'Stenhagen - en plats att kalla hem, en gemenskap att vara del av.',
+      customBookingInstructions: 'Nycklar finns tillgängliga hos expeditionen vardagar 09:00-17:00.',
       registrationNumber: 'HGF-2024-005',
       verified: true,
+      contactEmail: 'info@stenhagen-hg.se',
+      contactPhone: '018-567 8901',
+      memberCount: 789,
     },
   ]);
 
@@ -668,16 +693,10 @@ export const useMockDataStore = defineStore('mockData', () => {
 
   // Get premises by association (for booking from association page - shows all premises)
   const getPremisesByAssociation = (associationId: string, publicOnly: boolean = false) => {
-    console.log('🏢 Store - Getting premises for association:', associationId, 'publicOnly:', publicOnly);
-    console.log('🏢 Store - All premises:', premises.value);
     if (publicOnly) {
-      const filtered = premises.value.filter(p => p.associationId === associationId && p.isPublic);
-      console.log('🏢 Store - Filtered (public only):', filtered);
-      return filtered;
+      return premises.value.filter(p => p.associationId === associationId && p.isPublic);
     }
-    const filtered = premises.value.filter(p => p.associationId === associationId);
-    console.log('🏢 Store - Filtered (all):', filtered);
-    return filtered;
+    return premises.value.filter(p => p.associationId === associationId);
   };
 
   // Get premises by ID

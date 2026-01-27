@@ -19,8 +19,13 @@ export interface Association {
   latitude?: number;
   longitude?: number;
   description?: string;
+  missionStatement?: string;
+  customBookingInstructions?: string;
   registrationNumber: string;
   verified: boolean;
+  contactEmail?: string;
+  contactPhone?: string;
+  memberCount?: number;
 }
 
 export interface Meeting {

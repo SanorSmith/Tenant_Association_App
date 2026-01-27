@@ -209,10 +209,7 @@ const errors = reactive({
 const isSubmitting = ref(false);
 
 const availablePremises = computed(() => {
-  console.log('🏢 PremisesBookingModal - Association ID:', props.associationId);
-  const premises = mockDataStore.getPremisesByAssociation(props.associationId);
-  console.log('🏢 PremisesBookingModal - Available premises:', premises);
-  return premises;
+  return mockDataStore.getPremisesByAssociation(props.associationId);
 });
 
 const selectedPremises = computed(() => {
