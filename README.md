@@ -2,15 +2,15 @@
 
 En modern, fullständig digital plattform för att hantera hyresgästföreningar i Sverige.
 
-## 📋 Projektöversikt
+## Projektöversikt
 
-**Stage 1: Frontend Prototype - COMPLETE ✅**
+**Stage 1: Frontend Prototype - COMPLETE **
 
 High-fidelity UI/UX demo för hyresgästföreningsplattform med mock data.
 
 Detta är en Vue 3 + TypeScript applikation med ett professionellt designsystem inspirerat av Hyresgästföreningen.
 
-## 🎨 Design System
+## Design System
 
 Designsystemet är baserat på Hyresgästföreningens visuella identitet:
 
@@ -19,7 +19,7 @@ Designsystemet är baserat på Hyresgästföreningens visuella identitet:
 - **Komponenter**: Omfattande bibliotek av återanvändbara komponenter
 - **Responsiv**: Fungerar på mobil, surfplatta och desktop
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Vue 3.4** - Composition API + TypeScript 5.3
 - **Vite 5** - Build tool
@@ -237,3 +237,6 @@ Om du stöter på problem:
 
 Detta projekt är utvecklat för Grannskapet.
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+=======
+# Tenant_Association_App
+>>>>>>> ad58bb8007c22e598bb390cdccac5b31784b26ea
