@@ -1,7 +1,8 @@
 <template>
-  <div class="login-view">
-    <div class="login-container">
-      <div class="login-card">
+  <AppLayout>
+    <div class="login-view">
+      <div class="login-container">
+        <div class="login-card">
         <div class="login-header">
           <h1 class="text-3xl font-bold text-primary mb-2">Grannskapet</h1>
           <p class="text-text-secondary">Digital plattform för hyresgästföreningar</p>
@@ -56,12 +57,13 @@
         </form>
       </div>
     </div>
-  </div>
+  </AppLayout>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import AppLayout from '../../components/layout/AppLayout.vue';
 import BaseInput from '../../components/common/BaseInput.vue';
 import BaseCheckbox from '../../components/common/BaseCheckbox.vue';
 import BaseButton from '../../components/common/BaseButton.vue';

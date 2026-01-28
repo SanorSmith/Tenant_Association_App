@@ -40,7 +40,7 @@ const buttonClasses = computed(() => {
   const base = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary-dark focus:ring-primary',
+    primary: 'bg-primary text-white hover:bg-primary-dark hover:text-white focus:ring-primary transition-all duration-300',
     secondary: 'bg-secondary text-text-primary hover:bg-secondary/90 focus:ring-secondary',
     outline: 'border-2 border-primary text-primary hover:bg-primary/10 focus:ring-primary',
     ghost: 'text-primary hover:bg-primary/10 focus:ring-primary',

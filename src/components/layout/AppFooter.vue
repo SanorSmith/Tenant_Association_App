@@ -143,11 +143,9 @@ const handleLinkClick = (linkType: string) => {
 
 <style scoped>
 .app-footer {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border-top: 3px solid var(--hgf-blue);
+  background: var(--hgf-blue);
   margin-top: auto;
   position: relative;
-  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
@@ -193,20 +191,20 @@ const handleLinkClick = (linkType: string) => {
 .footer-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--hgf-blue);
+  color: white;
   margin: 0;
 }
 
 .footer-text {
   font-size: 1rem;
-  color: var(--hgf-gray-dark);
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
   font-weight: 600;
 }
 
 .footer-description {
   font-size: 0.9rem;
-  color: var(--hgf-gray-medium);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   max-width: 400px;
 }
@@ -222,13 +220,13 @@ const handleLinkClick = (linkType: string) => {
 .section-icon {
   width: 20px;
   height: 20px;
-  color: var(--hgf-blue);
+  color: white;
 }
 
 .footer-subtitle {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--hgf-gray-dark);
+  color: white;
   margin: 0;
 }
 
@@ -242,21 +240,23 @@ const handleLinkClick = (linkType: string) => {
   gap: 0.75rem;
 }
 
-.footer-link {
+.footer-link,
+.footer-link span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
-  color: var(--hgf-gray-medium);
+  color: rgba(255, 255, 255, 0.8) !important;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
 }
 
-.footer-link:hover {
-  color: var(--hgf-blue);
-  background: rgba(0, 102, 179, 0.1);
+.footer-link:hover,
+.footer-link:hover span {
+  color: white !important;
+  background: rgba(255, 255, 255, 0.1);
   transform: translateX(4px);
 }
 
@@ -264,6 +264,11 @@ const handleLinkClick = (linkType: string) => {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.footer-link:hover .link-icon {
+  color: white !important;
 }
 
 /* Demo Info */
@@ -273,31 +278,43 @@ const handleLinkClick = (linkType: string) => {
   gap: 0.75rem;
 }
 
-.demo-item {
+.demo-item,
+.demo-item span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: var(--hgf-gray-medium);
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.3s ease;
+}
+
+.demo-item:hover,
+.demo-item:hover span {
+  color: white !important;
+  transform: translateX(2px);
 }
 
 .demo-icon {
   width: 16px;
   height: 16px;
-  color: var(--hgf-green);
+  color: rgba(255, 255, 255, 0.7) !important;
   flex-shrink: 0;
+}
+
+.demo-item:hover .demo-icon {
+  color: white !important;
 }
 
 /* Footer Bottom */
 .footer-bottom {
   padding-top: 2rem;
-  border-top: 1px solid var(--hgf-gray-light);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
 }
 
 .copyright {
   font-size: 0.9rem;
-  color: var(--hgf-gray-medium);
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
 }
 
