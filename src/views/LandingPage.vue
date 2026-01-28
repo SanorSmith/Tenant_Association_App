@@ -149,19 +149,19 @@
           </div>
           <ul class="footer-links">
             <li>
-              <a href="#" class="footer-link">
+              <a href="/about" class="footer-link" @click.prevent="handleFooterLink('about')">
                 <Info :size="24" class="link-icon" />
                 <span>Om oss</span>
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="/contact" class="footer-link" @click.prevent="handleFooterLink('contact')">
                 <Mail :size="24" class="link-icon" />
                 <span>Kontakt</span>
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="/support" class="footer-link" @click.prevent="handleFooterLink('support')">
                 <CircleQuestionMark :size="24" class="link-icon" />
                 <span>Support</span>
               </a>
@@ -176,19 +176,19 @@
           </div>
           <ul class="footer-links">
             <li>
-              <a href="#" class="footer-link">
+              <a href="/privacy" class="footer-link" @click.prevent="handleFooterLink('privacy')">
                 <Eye :size="24" class="link-icon" />
                 <span>Integritetspolicy</span>
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="/terms" class="footer-link" @click.prevent="handleFooterLink('terms')">
                 <FileText :size="24" class="link-icon" />
                 <span>Användarvillkor</span>
               </a>
             </li>
             <li>
-              <a href="#" class="footer-link">
+              <a href="/cookies" class="footer-link" @click.prevent="handleFooterLink('cookies')">
                 <Cookie :size="24" class="link-icon" />
                 <span>Cookies</span>
               </a>
@@ -337,6 +337,24 @@ const useCurrentLocation = () => {
 
 const goToAssociation = (id: string) => {
   router.push(`/association/${id}/public`);
+};
+
+const handleFooterLink = (page: string) => {
+  // For demo purposes, show an alert since these pages don't exist yet
+  const pageNames: Record<string, string> = {
+    about: 'Om oss',
+    contact: 'Kontakt', 
+    support: 'Support',
+    privacy: 'Integritetspolicy',
+    terms: 'Användarvillkor',
+    cookies: 'Cookies'
+  };
+  
+  const pageName = pageNames[page] || page;
+  alert(`Sidan "${pageName}" är under utveckling. Detta är en demo-version av Grannskapet.`);
+  
+  // In a real app, you would navigate to the actual page:
+  // router.push(`/${page}`);
 };
 </script>
 
