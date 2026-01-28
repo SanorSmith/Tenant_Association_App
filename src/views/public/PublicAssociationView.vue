@@ -1,15 +1,7 @@
 <template>
   <AppLayout>
     <div class="public-page">
-      <!-- Header with Back Button -->
-      <header class="page-header">
-        <div class="header-container">
-          <button @click="goBack" class="back-button">
-            <ArrowLeft class="w-5 h-5" />
-            Tillbaka till sökning
-          </button>
-        </div>
-      </header>
+      <!-- Association Hero Banner -->
 
     <!-- Association Hero Banner -->
     <section v-if="association" class="association-hero">
@@ -124,9 +116,9 @@
     <div v-else class="not-found">
       <AlertCircle class="w-20 h-20 text-gray-400" />
       <h2 class="text-2xl font-bold text-gray-700 mt-4">Förening hittades inte</h2>
-      <button @click="goBack" class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg">
+      <router-link to="/" class="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg inline-block">
         Tillbaka till sökning
-      </button>
+      </router-link>
     </div>
 
     <!-- Form Modals -->
@@ -181,7 +173,6 @@ import { useMockDataStore } from '@/stores/mockData';
 import { format } from 'date-fns';
 import { sv } from 'date-fns/locale';
 import {
-  ArrowLeft,
   Building2,
   MapPin,
   FileText,
@@ -246,9 +237,6 @@ const getStatusLabel = (status: string) => {
   return labels[status] || status;
 };
 
-const goBack = () => {
-  router.push('/');
-};
 
 const openProposalForm = () => {
   showProposalForm.value = true;

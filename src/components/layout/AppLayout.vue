@@ -14,6 +14,10 @@
         <!-- Right side - Navigation Links -->
         <div class="navbar-right">
           <router-link to="/" class="nav-link">Hem</router-link>
+          <button @click="goBack" class="back-button">
+            <ArrowLeft class="w-5 h-5" />
+            Tillbaka till sökning
+          </button>
         </div>
       </div>
     </nav>
@@ -136,6 +140,7 @@
 <script setup lang="ts">
 import {
   Building2,
+  ArrowLeft,
   Link,
   Info,
   Mail,
@@ -151,6 +156,13 @@ import {
   TrendingUp,
   Building
 } from 'lucide-vue-next';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goBack = () => {
+  router.go(-1);
+};
 </script>
 
 <style scoped>
@@ -214,6 +226,27 @@ import {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background: var(--hgf-blue);
+  color: white;
+  transform: translateY(-1px);
 }
 
 .nav-link {
