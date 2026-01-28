@@ -55,6 +55,7 @@
             </router-link>
           </div>
         </form>
+        </div>
       </div>
     </div>
   </AppLayout>
