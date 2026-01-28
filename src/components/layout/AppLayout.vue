@@ -233,11 +233,16 @@ const showBoardLogin = computed(() => {
 .navbar-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-left: 0;
-  padding-left: 0;
+  justify-content: center;
   width: 100%;
+  position: relative;
+}
+
+.mobile-menu-toggle {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .brand-header {
