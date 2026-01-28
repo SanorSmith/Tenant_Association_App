@@ -19,10 +19,6 @@
             <p class="hero-description">{{ association.description }}</p>
           </div>
         </div>
-        <button @click="goBack" class="hero-back-button">
-          <ArrowLeft class="w-5 h-5" />
-          Tillbaka till sökning
-        </button>
       </div>
     </section>
 
@@ -169,7 +165,6 @@ import { useMockDataStore } from '@/stores/mockData';
 import { format } from 'date-fns';
 import { sv } from 'date-fns/locale';
 import {
-  ArrowLeft,
   Building2,
   MapPin,
   FileText,
@@ -202,10 +197,6 @@ const showCreateAssociationForm = ref(false);
 const showMembershipForm = ref(false);
 const showBookingForm = ref(false);
 const confirmationMessage = ref('');
-
-const goBack = () => {
-  router.go(-1);
-};
 
 const publicActivities = computed(() =>
   association.value 

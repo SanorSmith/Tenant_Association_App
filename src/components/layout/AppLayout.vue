@@ -30,15 +30,16 @@
             <Menu class="w-6 h-6" />
           </button>
         </div>
-      </div>
-      
-      <!-- Mobile Menu -->
-      <div v-if="showMobileMenu" class="mobile-menu">
-        <div class="mobile-menu-content">
-          <router-link to="/" class="mobile-nav-link" @click="closeMobileMenu">Hem</router-link>
+        
+        <!-- Mobile Menu -->
+        <div v-if="showMobileMenu" class="mobile-menu">
+          <router-link to="/" class="mobile-nav-link" @click="closeMobileMenu">
+            <Home class="w-5 h-5" />
+            Hem
+          </router-link>
           <div v-if="showBoardLogin" class="mobile-board-login">
             <p class="mobile-login-text">Styrelsemedlem?</p>
-            <router-link to="/login" class="mobile-login-button">
+            <router-link to="/login" class="mobile-login-button" @click="closeMobileMenu">
               <Lock class="w-4 h-4" />
               Logga in
             </router-link>
@@ -170,8 +171,9 @@
 import {
   Building2,
   ArrowLeft,
-  Menu,
   Lock,
+  Menu,
+  Home,
   Link,
   Info,
   Mail,
@@ -187,23 +189,11 @@ import {
   TrendingUp,
   Building
 } from 'lucide-vue-next';
-import { ref, computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
 const route = useRoute();
-
-const goBack = () => {
-  router.go(-1);
-};
-
-const showBackButton = computed(() => {
-  return route.path.startsWith('/association/') && route.path.includes('/public');
-});
-
-const showBoardLogin = computed(() => {
-  return route.path.startsWith('/association/') && route.path.includes('/public');
-});
 
 const showMobileMenu = ref(false);
 
@@ -219,6 +209,18 @@ const handleMobileBack = () => {
   router.go(-1);
   closeMobileMenu();
 };
+
+const goBack = () => {
+  router.go(-1);
+};
+
+const showBackButton = computed(() => {
+  return route.path.startsWith('/association/') && route.path.includes('/public');
+});
+
+const showBoardLogin = computed(() => {
+  return route.path.startsWith('/association/') && route.path.includes('/public');
+});
 </script>
 
 <style scoped>
@@ -349,11 +351,12 @@ const handleMobileBack = () => {
 }
 
 .login-button:hover {
-  background: var(--hgf-blue-dark);
+  background: var(--hgf-blue);
+  color: white;
   transform: translateY(-1px);
 }
 
-/* Mobile Menu */
+/* Mobile Menu Styles */
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -371,49 +374,46 @@ const handleMobileBack = () => {
   right: 0;
   background: white;
   border: 1px solid var(--hgf-gray-light);
+  border-radius: 0 0 8px 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
   z-index: 1000;
 }
 
-.mobile-menu-content {
-  padding: 1rem;
-}
-
 .mobile-nav-link {
-  display: block;
-  color: var(--hgf-blue);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   padding: 0.75rem 1rem;
+  color: var(--hgf-gray-dark);
+  text-decoration: none;
   border-radius: 8px;
-  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .mobile-nav-link:hover {
   background: var(--hgf-gray-bg);
+  color: var(--hgf-blue);
 }
 
 .mobile-board-login {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin: 1rem 0;
-  padding: 0.75rem 0;
+  padding: 1rem;
   border-top: 1px solid var(--hgf-gray-light);
+  margin-top: 0.5rem;
 }
 
 .mobile-login-text {
   color: var(--hgf-gray-dark);
   font-size: 0.9rem;
   font-weight: 500;
-  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .mobile-login-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 0.8rem;
+  padding: 0.5rem 1rem;
   background: var(--hgf-blue);
   color: white;
   border: none;
@@ -429,10 +429,11 @@ const handleMobileBack = () => {
 }
 
 .mobile-back-button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
   background: transparent;
   color: var(--hgf-blue);
   border: 2px solid var(--hgf-blue);
@@ -440,15 +441,28 @@ const handleMobileBack = () => {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none;
-  width: 100%;
-  justify-content: center;
+  text-align: left;
+  margin-top: 0.5rem;
 }
 
 .mobile-back-button:hover {
   background: var(--hgf-blue);
   color: white;
-  transform: translateY(-1px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
 }
 
 /* Main Content */
@@ -650,18 +664,6 @@ const handleMobileBack = () => {
   
   .main-content {
     margin-top: 120px; /* Account for taller navbar on mobile */
-  }
-  
-  .desktop-nav {
-    display: none;
-  }
-  
-  .mobile-menu-toggle {
-    display: block;
-  }
-  
-  .mobile-menu {
-    display: block;
   }
 }
 
