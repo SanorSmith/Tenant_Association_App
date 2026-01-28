@@ -268,11 +268,7 @@ const showBoardLogin = computed(() => {
 @media (min-width: 769px) {
   .navbar-left {
     justify-content: flex-start;
-    padding-left: 2rem;
-  }
-  
-  .navbar-content {
-    padding-left: 2rem;
+    padding-left: 2rem; /* Matches hero-container padding */
   }
   
   .mobile-menu-toggle {
@@ -281,6 +277,7 @@ const showBoardLogin = computed(() => {
   
   .brand-header {
     transform: scale(2);
+    margin-left: 0; /* Ensure exact alignment */
   }
   
   .brand-icon {
