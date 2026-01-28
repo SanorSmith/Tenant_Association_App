@@ -115,8 +115,8 @@ const getRoleLabel = (role: UserRole): string => {
   left: 0;
   bottom: 0;
   width: 280px;
-  background: var(--color-surface);
-  border-right: 1px solid var(--color-border);
+  background: var(--hgf-blue-dark);
+  border-right: 1px solid var(--hgf-blue);
   display: flex;
   flex-direction: column;
   z-index: var(--z-fixed);
@@ -136,10 +136,14 @@ const getRoleLabel = (role: UserRole): string => {
 
 .sidebar-header {
   padding: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.sidebar-header h2 {
+  color: white !important;
 }
 
 .close-button {
@@ -147,12 +151,12 @@ const getRoleLabel = (role: UserRole): string => {
   border: none;
   background: transparent;
   cursor: pointer;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.8);
   transition: color var(--transition-fast);
 }
 
 .close-button:hover {
-  color: var(--color-text-primary);
+  color: white;
 }
 
 .sidebar-nav {
@@ -166,7 +170,7 @@ const getRoleLabel = (role: UserRole): string => {
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
@@ -175,24 +179,25 @@ const getRoleLabel = (role: UserRole): string => {
 }
 
 .nav-item:hover {
-  color: var(--color-text-primary);
-  background: var(--color-background-secondary);
+  color: white;
+  background: var(--hgf-blue);
 }
 
 .nav-item.router-link-active {
-  color: var(--color-primary);
-  background: rgba(0, 95, 115, 0.1);
+  color: white;
+  background: var(--hgf-blue);
+  font-weight: var(--font-weight-semibold);
 }
 
 .nav-divider {
   height: 1px;
-  background: var(--color-border);
+  background: rgba(255, 255, 255, 0.1);
   margin: 1rem 0;
 }
 
 .sidebar-footer {
   padding: 1rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .user-info {
@@ -205,8 +210,8 @@ const getRoleLabel = (role: UserRole): string => {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: var(--radius-full);
-  background: var(--color-primary-light);
-  color: var(--color-primary);
+  background: var(--hgf-blue);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,7 +224,7 @@ const getRoleLabel = (role: UserRole): string => {
 
 .user-name {
   font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
+  color: white;
   font-size: 0.875rem;
   white-space: nowrap;
   overflow: hidden;
@@ -228,7 +233,7 @@ const getRoleLabel = (role: UserRole): string => {
 
 .user-role {
   font-size: 0.75rem;
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
