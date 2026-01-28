@@ -25,7 +25,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  variant: 'primary',
+  variant: 'outline',
   size: 'md',
   type: 'button',
   disabled: false,

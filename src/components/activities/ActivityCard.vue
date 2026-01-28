@@ -31,7 +31,7 @@
       </BaseButton>
       <BaseButton
         v-if="activity.status === 'planned' && canEdit"
-        variant="primary"
+        variant="outline"
         size="sm"
         @click="$emit('mark-complete', activity.id)"
       >
