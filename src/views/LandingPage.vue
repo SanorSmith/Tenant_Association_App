@@ -719,6 +719,7 @@ const goToAssociation = (id: string) => {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: calc(100vh - 6rem);
   min-height: calc(100vh - 6rem);
 }
 
