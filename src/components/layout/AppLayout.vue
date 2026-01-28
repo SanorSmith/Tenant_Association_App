@@ -10,8 +10,8 @@
             <Menu class="w-6 h-6" />
           </button>
           <router-link to="/" class="brand-header">
-            <h1 class="brand-title">Grannskapet</h1>
             <Building2 :size="48" class="brand-icon" />
+            <h1 class="brand-title">Grannskapet</h1>
           </router-link>
         </div>
         
@@ -250,6 +250,8 @@ const showBoardLogin = computed(() => {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .brand-header {
