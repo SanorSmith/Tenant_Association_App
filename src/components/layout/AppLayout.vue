@@ -5,10 +5,10 @@
       <div class="navbar-content">
         <!-- Left side - Brand Header -->
         <div class="navbar-left">
-          <div class="brand-header">
+          <router-link to="/" class="brand-header">
             <Building2 :size="48" class="brand-icon" />
             <h1 class="brand-title">Grannskapet</h1>
-          </div>
+          </router-link>
         </div>
         
         <!-- Right side - Navigation Links -->
@@ -190,6 +190,8 @@ import {
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 .brand-icon {

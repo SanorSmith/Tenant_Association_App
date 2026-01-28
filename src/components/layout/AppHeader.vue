@@ -10,10 +10,10 @@
         >
           <Menu class="w-6 h-6" />
         </button>
-        <div class="brand-header">
+        <router-link to="/" class="brand-header">
           <Building2 :size="48" class="brand-icon" />
           <h1 class="brand-title">Grannskapet</h1>
-        </div>
+        </router-link>
       </div>
       
       <!-- Right side - Navigation Links -->
@@ -114,6 +114,8 @@ const handleLogout = () => {
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 .brand-icon {
