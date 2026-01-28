@@ -182,6 +182,8 @@ const handleTabChange = (event: Event) => {
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   color: var(--color-text-secondary);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
