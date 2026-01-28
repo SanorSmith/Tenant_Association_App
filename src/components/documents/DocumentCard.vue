@@ -1,7 +1,7 @@
 <template>
   <BaseCard class="document-card">
     <div class="document-icon">
-      <FileText class="w-8 h-8" style="color: var(--hgf-blue);" />
+      <FileText class="w-8 h-8 text-primary" />
     </div>
     
     <div class="document-info">
@@ -140,7 +140,7 @@ const getStatusVariant = (status: string) => {
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  background: var(--color-primary-light);
+  background: transparent;
   border-radius: var(--radius-md);
 }
 
