@@ -3,16 +3,16 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- Left side - empty for now -->
-        <div class="navbar-left"></div>
-        
-        <!-- Right side - Brand Header and Login -->
-        <div class="navbar-right">
+        <!-- Left side - Brand Header -->
+        <div class="navbar-left">
           <div class="brand-header">
             <Building2 :size="48" class="brand-icon" />
             <h1 class="brand-title">Grannskapet</h1>
           </div>
-          
+        </div>
+        
+        <!-- Right side - Login only -->
+        <div class="navbar-right">
           <router-link to="/login" class="login-link">
             <Lock :size="16" />
             Logga in här
@@ -666,30 +666,31 @@ const goToAssociation = (id: string) => {
 }
 
 .navbar-left {
-  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left .brand-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-left .brand-icon {
+  color: var(--hgf-blue);
+}
+
+.navbar-left .brand-title {
+  color: var(--hgf-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.navbar-right .brand-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.navbar-right .brand-icon {
-  color: var(--hgf-blue);
-}
-
-.navbar-right .brand-title {
-  color: var(--hgf-red);
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
 }
 
 .navbar-right .login-link {
