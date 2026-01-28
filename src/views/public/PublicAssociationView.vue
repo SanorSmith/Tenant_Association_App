@@ -53,15 +53,7 @@
               </button>
             </div>
 
-            <!-- Board Login -->
-            <div class="board-login-box">
-              <p class="login-text">Styrelsemedlem?</p>
-              <router-link to="/login" class="login-button">
-                <Lock class="w-4 h-4" />
-                Logga in
-              </router-link>
-            </div>
-          </div>
+                      </div>
         </aside>
 
         <!-- Main: News Feed -->
@@ -167,7 +159,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useMockDataStore } from '@/stores/mockData';
 import { format } from 'date-fns';
@@ -179,7 +171,6 @@ import {
   PlusCircle,
   Users,
   Calendar,
-  Lock,
   AlertCircle,
   CheckCircle,
   X,
@@ -260,11 +251,6 @@ const handleFormSuccess = (message: string) => {
     confirmationMessage.value = '';
   }, 8000);
 };
-
-// Listen for proposal form event from navbar
-onMounted(() => {
-  window.addEventListener('open-proposal-form', openProposalForm);
-});
 </script>
 
 <style scoped>
