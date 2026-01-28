@@ -418,14 +418,6 @@ const handleFormSuccess = (message: string) => {
   margin-bottom: 2rem;
 }
 
-/* Center content on big screens */
-@media (min-width: 1200px) {
-  .action-btn {
-    justify-content: center;
-    text-align: center;
-  }
-}
-
 .action-btn {
   display: flex;
   align-items: center;
@@ -464,6 +456,22 @@ const handleFormSuccess = (message: string) => {
 .action-btn.secondary:hover {
   background: var(--hgf-blue);
   color: white;
+}
+
+/* Big Screen Sidebar Alignment */
+@media (min-width: 769px) {
+  .sidebar-title {
+    text-align: left;
+  }
+  
+  .action-buttons {
+    align-items: flex-start;
+  }
+  
+  .action-btn {
+    text-align: left;
+    justify-content: flex-start;
+  }
 }
 
 .btn-icon {
