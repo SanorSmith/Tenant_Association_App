@@ -402,6 +402,8 @@ const handleFormSuccess = (message: string) => {
   position: sticky;
   top: 2rem;
   height: fit-content;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .sidebar-card {
