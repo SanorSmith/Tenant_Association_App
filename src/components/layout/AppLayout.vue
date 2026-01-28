@@ -263,19 +263,19 @@ const showBoardLogin = computed(() => {
   cursor: pointer;
   padding: 0.5rem;
   margin-left: 0;
-}
-
-.mobile-menu-toggle svg {
-  width: 32px;
-  height: 28px;
-  stroke-width: 3;
+  transition: all 0.3s ease;
 }
 
 .mobile-menu-toggle:hover {
   background: var(--hgf-blue);
   color: white;
   transform: translateY(-1px);
-  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle svg {
+  width: 32px;
+  height: 28px;
+  stroke-width: 3;
 }
 
 .brand-header {
