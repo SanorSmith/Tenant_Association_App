@@ -256,26 +256,40 @@ const showBoardLogin = computed(() => {
 }
 
 .mobile-menu-toggle {
-  background: white;
-  border: 2px solid var(--hgf-blue);
-  border-radius: 8px;
+  background: none;
+  border: none;
   color: var(--hgf-blue);
   cursor: pointer;
-  padding: 0.5rem;
-  margin-left: 0;
-  transition: all 0.3s ease;
-}
-
-.mobile-menu-toggle:hover {
-  background: var(--hgf-blue);
-  color: white;
-  transform: translateY(-1px);
+  padding: 0.25rem;
+  margin-left: -0.5rem;
 }
 
 .mobile-menu-toggle svg {
   width: 32px;
   height: 28px;
   stroke-width: 3;
+}
+
+/* Mobile only - Blue rounded border for hamburger */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    border: 2px solid var(--hgf-blue);
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+  
+  .navbar-left {
+    position: relative;
+  }
+  
+  .navbar-part:first-child {
+    position: absolute;
+    left: 0;
+  }
+  
+  .brand-header {
+    margin: 0 auto;
+  }
 }
 
 .brand-header {
