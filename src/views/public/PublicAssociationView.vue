@@ -376,16 +376,35 @@ const handleFormSuccess = (message: string) => {
 
 /* Main Content */
 .main-content {
-  padding: 3rem 0;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding: 4rem 3rem;
+  }
 }
 
 .content-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 /* Sidebar */

@@ -475,7 +475,6 @@ const showBoardLogin = computed(() => {
 .main-content {
   flex: 1;
   margin-top: 80px; /* Account for fixed navbar */
-  padding: 2rem;
 }
 
 /* Footer Styles - Same as LandingPage */
