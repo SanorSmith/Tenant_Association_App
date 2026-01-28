@@ -256,17 +256,26 @@ const showBoardLogin = computed(() => {
 }
 
 .mobile-menu-toggle {
-  background: none;
-  border: none;
+  background: white;
+  border: 2px solid var(--hgf-blue);
+  border-radius: 8px;
   color: var(--hgf-blue);
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 0.5rem;
+  margin-left: 0;
 }
 
 .mobile-menu-toggle svg {
   width: 32px;
   height: 28px;
   stroke-width: 3;
+}
+
+.mobile-menu-toggle:hover {
+  background: var(--hgf-blue);
+  color: white;
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
 }
 
 .brand-header {
