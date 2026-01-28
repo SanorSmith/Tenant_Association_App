@@ -3,7 +3,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- Left side - Brand Header -->
+        <!-- Full Width Brand Header -->
         <div class="navbar-left">
           <!-- Mobile Menu Toggle -->
           <button @click="toggleMobileMenu" class="mobile-menu-toggle">
@@ -13,21 +13,6 @@
             <Building2 :size="48" class="brand-icon" />
             <h1 class="brand-title">Grannskapet</h1>
           </router-link>
-        </div>
-        
-        <!-- Right side - Navigation Links -->
-        <div class="navbar-right">
-          <!-- Desktop Navigation -->
-          <div class="desktop-nav">
-            <router-link v-if="!showBoardLogin" to="/" class="nav-link">Hem</router-link>
-            <div v-if="showBoardLogin" class="board-login-nav">
-              <p class="login-text">Styrelsemedlem?</p>
-              <router-link to="/login" class="login-button">
-                <Lock class="w-4 h-4" />
-                Logga in
-              </router-link>
-            </div>
-          </div>
         </div>
         
         <!-- Mobile Menu -->
@@ -243,7 +228,6 @@ const showBoardLogin = computed(() => {
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .navbar-left {
@@ -252,6 +236,7 @@ const showBoardLogin = computed(() => {
   gap: 1rem;
   margin-left: 0;
   padding-left: 0;
+  width: 100%;
 }
 
 .brand-header {
