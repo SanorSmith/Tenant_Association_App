@@ -175,10 +175,10 @@ import {
 .navbar-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 0.4rem; /* Reduced padding by 80% (2rem -> 0.4rem) */
+  padding: 1rem 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .navbar-left {
@@ -208,9 +208,7 @@ import {
 .navbar-right {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 0.4rem; /* Reduced gap by 80% (2rem -> 0.4rem) */
-  margin-left: auto; /* Push to the right */
+  gap: 2rem;
 }
 
 .nav-link {
