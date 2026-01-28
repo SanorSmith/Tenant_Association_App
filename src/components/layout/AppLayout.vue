@@ -14,7 +14,7 @@
         <!-- Right side - Navigation Links -->
         <div class="navbar-right">
           <router-link to="/" class="nav-link">Hem</router-link>
-          <button @click="goBack" class="back-button">
+          <button v-if="showBackButton" @click="goBack" class="back-button">
             <ArrowLeft class="w-5 h-5" />
             Tillbaka till sökning
           </button>
@@ -156,13 +156,19 @@ import {
   TrendingUp,
   Building
 } from 'lucide-vue-next';
-import { useRouter } from 'vue-router';
+import { computed } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
+const route = useRoute();
 
 const goBack = () => {
   router.go(-1);
 };
+
+const showBackButton = computed(() => {
+  return route.path.startsWith('/association/') && route.path.includes('/public');
+});
 </script>
 
 <style scoped>
