@@ -357,7 +357,7 @@ const showBoardLogin = computed(() => {
 }
 
 .mobile-menu-toggle svg {
-  width: 28px;
+  width: 32px;
   height: 28px;
   stroke-width: 3;
 }
