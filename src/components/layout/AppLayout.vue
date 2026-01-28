@@ -9,13 +9,13 @@
             <Building2 :size="48" class="brand-icon" />
             <h1 class="brand-title">Grannskapet</h1>
           </router-link>
+          <router-link to="/" class="nav-link">Hem</router-link>
         </div>
         
         <!-- Right side - Navigation Links -->
         <div class="navbar-right">
           <!-- Desktop Navigation -->
           <div class="desktop-nav">
-            <router-link to="/" class="nav-link">Hem</router-link>
             <div v-if="showBoardLogin" class="board-login-nav">
               <p class="login-text">Styrelsemedlem?</p>
               <router-link to="/login" class="login-button">
@@ -253,6 +253,7 @@ const showBoardLogin = computed(() => {
 .navbar-left {
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
 .brand-header {
