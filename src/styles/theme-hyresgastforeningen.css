@@ -406,6 +406,7 @@ select:focus {
 .tab {
   color: var(--hgf-gray-medium);
   border-bottom: 2px solid transparent;
+  border-radius: 8px;
 }
 
 .tab:hover {
