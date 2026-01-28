@@ -721,20 +721,115 @@ const handleFormSuccess = (message: string) => {
 }
 
 @media (max-width: 640px) {
+  .hero-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .hero-content {
     flex-direction: column;
+    text-align: center;
+    gap: 1rem;
   }
 
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-location {
+    justify-content: center;
+  }
+
+  .hero-back-button {
+    align-self: flex-start;
+    margin-top: 0;
+  }
+
+  .content-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .action-sidebar {
+    position: static;
+    order: -1;
   }
 
   .action-buttons {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .action-btn {
+    padding: 0.75rem;
+  }
+
+  .news-feed {
+    order: 1;
+  }
+
+  .feed-title {
+    font-size: 1.25rem;
+  }
+
+  .activity-card {
+    padding: 1rem;
   }
 
   .activity-image {
-    height: 200px;
+    height: 150px;
+  }
+
+  .activity-content h3 {
+    font-size: 1rem;
+  }
+
+  .activity-content p {
+    font-size: 0.875rem;
+  }
+
+  .sidebar-card {
+    padding: 1.5rem;
+  }
+
+  .sidebar-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.25rem;
+  }
+
+  .hero-description {
+    font-size: 0.875rem;
+  }
+
+  .sidebar-card {
+    padding: 1rem;
+  }
+
+  .action-btn {
+    padding: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .activity-card {
+    padding: 0.75rem;
+  }
+
+  .activity-image {
+    height: 120px;
   }
 }
 </style>
