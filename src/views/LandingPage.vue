@@ -207,9 +207,9 @@ const goToAssociation = (id: string) => {
   background: var(--hgf-gray-bg);
 }
 
-/* Hero Section with Blue Gradient */
+/* Hero Section with RED Gradient (HGF Logo Color) */
 .hero-section {
-  background: linear-gradient(135deg, var(--hgf-blue) 0%, var(--hgf-blue-dark) 100%);
+  background: linear-gradient(135deg, var(--hgf-red) 0%, var(--hgf-red-dark) 100%);
   color: white;
   padding: 4rem 2rem 6rem;
   text-align: center;
@@ -300,7 +300,7 @@ const goToAssociation = (id: string) => {
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: var(--hgf-green);
+  background: var(--hgf-red);
   color: white;
   border: none;
   border-radius: 8px;
@@ -308,14 +308,14 @@ const goToAssociation = (id: string) => {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 166, 81, 0.3);
+  box-shadow: 0 4px 12px rgba(227, 6, 19, 0.3);
   white-space: nowrap;
 }
 
 .search-button:hover:not(:disabled) {
-  background: var(--hgf-green-dark);
+  background: var(--hgf-red-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 166, 81, 0.4);
+  box-shadow: 0 6px 16px rgba(227, 6, 19, 0.4);
 }
 
 .search-button:disabled {

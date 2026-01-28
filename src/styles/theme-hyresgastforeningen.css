@@ -5,13 +5,15 @@
   /* ========================================
      OFFICIAL BRAND COLORS
      ======================================== */
-  --hgf-blue: #0066B3;
-  --hgf-blue-dark: #004B87;
-  --hgf-blue-light: #3399CC;
-  --hgf-green: #00A651;
+  --hgf-red: #E30613;           /* PRIMARY - Logo color, main CTAs */
+  --hgf-red-dark: #C70511;      /* Darker red for hover states */
+  --hgf-red-light: #FF4D5A;     /* Lighter red for backgrounds */
+  --hgf-blue: #0066B3;          /* SECONDARY - Supporting color */
+  --hgf-blue-dark: #004B87;     /* Dark blue for sidebar/headers */
+  --hgf-blue-light: #3399CC;    /* Light blue for accents */
+  --hgf-yellow: #FFB81C;        /* Warning color */
+  --hgf-green: #00A651;         /* Success color (not primary brand) */
   --hgf-green-dark: #008040;
-  --hgf-yellow: #FFB81C;
-  --hgf-red: #E30613;
   
   /* Neutral Colors */
   --hgf-gray-dark: #333333;
@@ -23,11 +25,11 @@
   /* ========================================
      THEME VARIABLES (Updated)
      ======================================== */
-  --color-primary: var(--hgf-blue);
-  --color-primary-dark: var(--hgf-blue-dark);
-  --color-primary-light: var(--hgf-blue-light);
-  --color-secondary: var(--hgf-green);
-  --color-secondary-dark: var(--hgf-green-dark);
+  --color-primary: var(--hgf-red);           /* RED for primary CTAs */
+  --color-primary-dark: var(--hgf-red-dark);
+  --color-primary-light: var(--hgf-red-light);
+  --color-secondary: var(--hgf-blue);        /* BLUE for secondary actions */
+  --color-secondary-dark: var(--hgf-blue-dark);
   --color-accent: var(--hgf-yellow);
   --color-error: var(--hgf-red);
   --color-danger: var(--hgf-red);
@@ -59,26 +61,26 @@
    GLOBAL BUTTON OVERRIDES
    ======================================== */
 
-/* Primary buttons - Green for CTAs */
+/* Primary buttons - RED for CTAs (HGF logo color) */
 button.bg-primary,
 .bg-primary,
 [class*="bg-primary"] {
-  background-color: var(--hgf-green) !important;
+  background-color: var(--hgf-red) !important;
 }
 
 button.bg-primary:hover,
 .bg-primary:hover,
 button.hover\:bg-primary-dark:hover {
-  background-color: var(--hgf-green-dark) !important;
+  background-color: var(--hgf-red-dark) !important;
 }
 
 /* Text colors */
 .text-primary {
-  color: var(--hgf-blue) !important;
+  color: var(--hgf-red) !important;
 }
 
 .text-secondary {
-  color: var(--hgf-green) !important;
+  color: var(--hgf-blue) !important;
 }
 
 /* Border colors */
