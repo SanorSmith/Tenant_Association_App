@@ -3,22 +3,41 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- Left side - can be empty or have menu items -->
+        <!-- Left side - Professional Navigation Menu -->
         <div class="navbar-left">
-          <!-- Future menu items can go here -->
+          <div class="nav-menu">
+            <router-link to="/" class="nav-link">
+              <Home :size="18" />
+              Hem
+            </router-link>
+            <router-link to="/about" class="nav-link">
+              <Info :size="18" />
+              Om oss
+            </router-link>
+            <router-link to="/contact" class="nav-link">
+              <Mail :size="18" />
+              Kontakt
+            </router-link>
+          </div>
         </div>
         
         <!-- Right side - Brand and Login -->
         <div class="navbar-right">
           <div class="brand-header">
-            <Building2 :size="48" class="brand-icon" />
+            <Building2 :size="40" class="brand-icon" />
             <h1 class="brand-title">Grannskapet</h1>
           </div>
           
-          <router-link to="/login" class="login-link">
-            <Lock :size="16" />
-            Logga in här
-          </router-link>
+          <div class="nav-actions">
+            <router-link to="/demo" class="demo-link">
+              <Eye :size="16" />
+              Demo
+            </router-link>
+            <router-link to="/login" class="login-link">
+              <Lock :size="16" />
+              Logga in
+            </router-link>
+          </div>
         </div>
       </div>
     </nav>
@@ -265,7 +284,8 @@ import {
   CircleCheckBig,
   Calendar,
   TrendingUp,
-  Building
+  Building,
+  Home
 } from 'lucide-vue-next';
 import type { Association } from '@/types';
 
@@ -351,18 +371,19 @@ const goToAssociation = (id: string) => {
 /* Navigation Bar */
 .navbar {
   background: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(0, 102, 179, 0.1);
 }
 
 .navbar-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.75rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -370,6 +391,36 @@ const goToAssociation = (id: string) => {
 
 .navbar-left {
   flex: 1;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  color: var(--hgf-gray-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--hgf-red);
+  background: rgba(227, 6, 19, 0.05);
+}
+
+.nav-link.router-link-active {
+  color: var(--hgf-blue);
+  background: rgba(0, 102, 179, 0.08);
 }
 
 .navbar-right {
@@ -382,10 +433,16 @@ const goToAssociation = (id: string) => {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  margin-right: 1rem;
 }
 
 .navbar-right .brand-icon {
   color: var(--hgf-blue);
+  transition: transform 0.2s ease;
+}
+
+.navbar-right .brand-header:hover .brand-icon {
+  transform: scale(1.05);
 }
 
 .navbar-right .brand-title {
@@ -393,27 +450,54 @@ const goToAssociation = (id: string) => {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
-.navbar-right .login-link {
-  display: inline-flex;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.demo-link {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
+  color: var(--hgf-blue);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.demo-link:hover {
+  background: rgba(0, 102, 179, 0.08);
+  color: var(--hgf-blue-dark);
+}
+
+.login-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
   background: white;
   color: var(--hgf-blue);
   border: 2px solid var(--hgf-blue);
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0, 102, 179, 0.1);
 }
 
-.navbar-right .login-link:hover {
+.login-link:hover {
   background: var(--hgf-blue);
   color: white;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.25);
 }
 
 /* Hero Section with Light Background (RED only for title) */
