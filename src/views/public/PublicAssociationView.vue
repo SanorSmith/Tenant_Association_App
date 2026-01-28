@@ -335,8 +335,6 @@ const handleFormSuccess = (message: string) => {
 }
 
 .hero-back-button:hover {
-  background: white;
-  color: var(--hgf-blue);
   transform: translateY(-1px);
 }
 
