@@ -272,12 +272,30 @@ const showBoardLogin = computed(() => {
 .brand-header {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   text-decoration: none;
   color: inherit;
   outline: none;
-  transform: scale(2);
-  transform-origin: left center;
+}
+
+.brand-icon {
+  transition: all 0.3s ease;
+}
+
+.brand-title {
+  transition: all 0.3s ease;
+}
+
+/* Big screens - Double size */
+@media (min-width: 1024px) {
+  .brand-icon {
+    width: 96px !important;
+    height: 96px !important;
+  }
+  
+  .brand-title {
+    font-size: 3rem;
+  }
 }
 
 .brand-header:focus {
