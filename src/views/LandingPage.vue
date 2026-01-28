@@ -713,7 +713,7 @@ const goToAssociation = (id: string) => {
 
 .navbar-right .login-link:hover {
   background: var(--hgf-blue);
-  color: white;
+  color: white !important;
   transform: translateY(-1px);
 }
 
