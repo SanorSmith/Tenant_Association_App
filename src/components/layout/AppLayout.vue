@@ -14,7 +14,6 @@
         <!-- Right side - Navigation Links -->
         <div class="navbar-right">
           <router-link to="/" class="nav-link">Hem</router-link>
-          <router-link to="/login" class="nav-link">Logga in</router-link>
         </div>
       </div>
     </nav>
