@@ -48,6 +48,130 @@
   --color-info: var(--hgf-blue);
   
   /* Chart colors */
+  --color-chart-1: var(--hgf-blue);
+  --color-chart-2: var(--hgf-green);
+  --color-chart-3: var(--hgf-yellow);
+  --color-chart-4: var(--hgf-blue-light);
+  --color-chart-5: var(--hgf-green-dark);
+}
+
+/* ========================================
+   GLOBAL BUTTON OVERRIDES
+   ======================================== */
+
+/* Primary buttons - Green for CTAs */
+button.bg-primary,
+.bg-primary,
+[class*="bg-primary"] {
+  background-color: var(--hgf-green) !important;
+}
+
+button.bg-primary:hover,
+.bg-primary:hover,
+button.hover\:bg-primary-dark:hover {
+  background-color: var(--hgf-green-dark) !important;
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--hgf-blue) !important;
+}
+
+.text-secondary {
+  color: var(--hgf-green) !important;
+}
+
+/* Border colors */
+.border-primary {
+  border-color: var(--hgf-blue) !important;
+}
+
+/* Focus ring colors */
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--hgf-blue) !important;
+}
+
+/* ========================================
+   SIDEBAR STYLING
+   ======================================== */
+.app-sidebar,
+aside[class*="sidebar"] {
+  background: var(--hgf-blue-dark) !important;
+}
+
+.app-sidebar a,
+aside[class*="sidebar"] a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.app-sidebar a:hover,
+.app-sidebar a.router-link-active,
+aside[class*="sidebar"] a:hover,
+aside[class*="sidebar"] a.router-link-active {
+  background-color: var(--hgf-blue) !important;
+  color: white !important;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--hgf-blue) !important;
+  --tw-ring-color: var(--hgf-blue) !important;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: var(--hgf-blue) !important;
+  border-color: var(--hgf-blue) !important;
+}
+
+/* ========================================
+   LINKS
+   ======================================== */
+a:not(.no-style) {
+  color: var(--hgf-blue);
+}
+
+a:not(.no-style):hover {
+  color: var(--hgf-blue-dark);
+}
+
+/* ========================================
+   BADGES AND STATUS INDICATORS
+   ======================================== */
+.badge,
+[class*="badge-"] {
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.badge-success,
+.bg-success {
+  background-color: var(--hgf-green) !important;
+  color: white !important;
+}
+
+.badge-warning,
+.bg-warning {
+  background-color: var(--hgf-yellow) !important;
+  color: var(--hgf-gray-dark) !important;
+}
+
+.badge-error,
+.bg-error {
+  background-color: var(--hgf-red) !important;
+  color: white !important;
+}
+
+.badge-info,
+.bg-info {
+  background-color: var(--hgf-blue) !important;
+  color: white !important;
   --chart-blue: var(--hgf-blue);
   --chart-green: var(--hgf-green);
   --chart-yellow: var(--hgf-yellow);
