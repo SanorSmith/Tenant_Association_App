@@ -149,22 +149,22 @@
           </div>
           <ul class="footer-links">
             <li>
-              <a href="/about" class="footer-link" @click.prevent="handleFooterLink('about')">
+              <router-link to="/info/om-oss" class="footer-link">
                 <Info :size="24" class="link-icon" />
                 <span>Om oss</span>
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="/contact" class="footer-link" @click.prevent="handleFooterLink('contact')">
+              <router-link to="/info/kontakt" class="footer-link">
                 <Mail :size="24" class="link-icon" />
                 <span>Kontakt</span>
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="/support" class="footer-link" @click.prevent="handleFooterLink('support')">
+              <router-link to="/info/support" class="footer-link">
                 <CircleQuestionMark :size="24" class="link-icon" />
                 <span>Support</span>
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -176,22 +176,22 @@
           </div>
           <ul class="footer-links">
             <li>
-              <a href="/privacy" class="footer-link" @click.prevent="handleFooterLink('privacy')">
+              <router-link to="/info/integritetspolicy" class="footer-link">
                 <Eye :size="24" class="link-icon" />
                 <span>Integritetspolicy</span>
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="/terms" class="footer-link" @click.prevent="handleFooterLink('terms')">
+              <router-link to="/info/anvandarvillkor" class="footer-link">
                 <FileText :size="24" class="link-icon" />
                 <span>Användarvillkor</span>
-              </a>
+              </router-link>
             </li>
             <li>
-              <a href="/cookies" class="footer-link" @click.prevent="handleFooterLink('cookies')">
+              <router-link to="/info/cookies" class="footer-link">
                 <Cookie :size="24" class="link-icon" />
                 <span>Cookies</span>
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -339,23 +339,6 @@ const goToAssociation = (id: string) => {
   router.push(`/association/${id}/public`);
 };
 
-const handleFooterLink = (page: string) => {
-  // For demo purposes, show an alert since these pages don't exist yet
-  const pageNames: Record<string, string> = {
-    about: 'Om oss',
-    contact: 'Kontakt', 
-    support: 'Support',
-    privacy: 'Integritetspolicy',
-    terms: 'Användarvillkor',
-    cookies: 'Cookies'
-  };
-  
-  const pageName = pageNames[page] || page;
-  alert(`Sidan "${pageName}" är under utveckling. Detta är en demo-version av Grannskapet.`);
-  
-  // In a real app, you would navigate to the actual page:
-  // router.push(`/${page}`);
-};
 </script>
 
 <style scoped>
@@ -840,15 +823,24 @@ const handleFooterLink = (page: string) => {
   gap: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  border-radius: 4px;
 }
 
 .footer-link:hover {
   color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
 }
 
-.link-icon {
-  color: rgba(255, 255, 255, 0.6);
+.footer-link .link-icon {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover .link-icon {
+  color: white;
 }
 
 .demo-info {
