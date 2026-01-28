@@ -352,11 +352,20 @@ const goToAssociation = (id: string) => {
   color: var(--hgf-gray-dark);
   padding: 4rem 2rem 6rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px); /* Full height minus navbar */
 }
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .brand-header {
@@ -713,10 +722,6 @@ const goToAssociation = (id: string) => {
   transform: translateY(-1px);
 }
 
-/* Add padding to hero section to account for fixed navbar */
-.hero-section {
-  padding-top: 6rem;
-}
 
 /* Footer Container */
 .footer-container {
