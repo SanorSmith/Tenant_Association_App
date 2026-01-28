@@ -20,7 +20,7 @@
     <div class="document-actions">
       <BaseButton
         v-if="document.status === 'draft'"
-        variant="primary"
+        variant="outline"
         size="sm"
         @click="$emit('edit', document.id)"
       >
