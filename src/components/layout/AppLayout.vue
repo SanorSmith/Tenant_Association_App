@@ -14,10 +14,6 @@
         <!-- Right side - Navigation Links -->
         <div class="navbar-right">
           <router-link to="/" class="nav-link">Hem</router-link>
-          <button v-if="showBackButton" @click="goBack" class="back-button">
-            <ArrowLeft class="w-5 h-5" />
-            Tillbaka till sökning
-          </button>
           <div v-if="showBoardLogin" class="board-login-nav">
             <p class="login-text">Styrelsemedlem?</p>
             <router-link to="/login" class="login-button">

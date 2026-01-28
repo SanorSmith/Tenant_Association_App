@@ -6,6 +6,10 @@
     <!-- Association Hero Banner -->
     <section v-if="association" class="association-hero">
       <div class="hero-container">
+        <button @click="goBack" class="hero-back-button">
+          <ArrowLeft class="w-5 h-5" />
+          Tillbaka till sökning
+        </button>
         <div class="hero-content">
           <div class="hero-icon">
             <Building2 class="w-12 h-12" />
@@ -165,6 +169,7 @@ import { useMockDataStore } from '@/stores/mockData';
 import { format } from 'date-fns';
 import { sv } from 'date-fns/locale';
 import {
+  ArrowLeft,
   Building2,
   MapPin,
   FileText,
@@ -197,6 +202,10 @@ const showCreateAssociationForm = ref(false);
 const showMembershipForm = ref(false);
 const showBookingForm = ref(false);
 const confirmationMessage = ref('');
+
+const goBack = () => {
+  router.go(-1);
+};
 
 const publicActivities = computed(() =>
   association.value 
@@ -304,6 +313,28 @@ const handleFormSuccess = (message: string) => {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+.hero-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.hero-back-button:hover {
+  background: white;
+  color: var(--hgf-blue);
+  transform: translateY(-1px);
 }
 
 .hero-content {
