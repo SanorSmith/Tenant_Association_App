@@ -350,7 +350,8 @@ const showBoardLogin = computed(() => {
 .mobile-menu-toggle {
   display: none;
   background: none;
-  border: none;
+  border: 2px solid red;
+  border-radius: 8px;
   color: var(--hgf-blue);
   cursor: pointer;
   padding: 0.25rem;
