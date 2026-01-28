@@ -442,19 +442,20 @@ const handleFormSuccess = (message: string) => {
 .action-btn.primary {
   background: white;
   color: var(--hgf-blue);
-  border: 2px solid white;
+  border: 2px solid var(--hgf-blue);
 }
 
 .action-btn.primary:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--hgf-blue);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.3);
 }
 
 .action-btn.secondary {
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
   color: var(--hgf-blue);
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--hgf-blue);
 }
 
 .action-btn.secondary:hover {
