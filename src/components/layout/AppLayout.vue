@@ -3,27 +3,20 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- Split Layout - 4 Parts -->
+        <!-- 2-Part Layout - Aligned to Sidebar -->
         <div class="navbar-left">
-          <!-- Part 1: Mobile Menu Toggle -->
+          <!-- Part 1: Sidebar Column (320px) - Brand Header -->
           <div class="navbar-part">
             <button @click="toggleMobileMenu" class="mobile-menu-toggle">
               <Menu class="w-6 h-6" />
             </button>
-          </div>
-          
-          <!-- Part 2: Empty Space -->
-          <div class="navbar-part"></div>
-          
-          <!-- Part 3: Brand Header (aligned to sidebar) -->
-          <div class="navbar-part">
             <router-link to="/" class="brand-header">
               <Building2 :size="48" class="brand-icon" />
               <h1 class="brand-title">Grannskapet</h1>
             </router-link>
           </div>
           
-          <!-- Part 4: Empty Space -->
+          <!-- Part 2: Main Content Column -->
           <div class="navbar-part"></div>
         </div>
         
@@ -244,25 +237,22 @@ const showBoardLogin = computed(() => {
 
 .navbar-left {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-columns: 320px 1fr;
   align-items: center;
   width: 100%;
-  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .navbar-part {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
 }
 
 .navbar-part:first-child {
   justify-content: flex-start;
-}
-
-.navbar-part:nth-child(3) {
-  justify-content: flex-end;
-  padding-right: 2rem;
 }
 
 .mobile-menu-toggle {
