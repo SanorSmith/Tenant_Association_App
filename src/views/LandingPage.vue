@@ -3,41 +3,20 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- Left side - Professional Navigation Menu -->
-        <div class="navbar-left">
-          <div class="nav-menu">
-            <router-link to="/" class="nav-link">
-              <Home :size="18" />
-              Hem
-            </router-link>
-            <router-link to="/about" class="nav-link">
-              <Info :size="18" />
-              Om oss
-            </router-link>
-            <router-link to="/contact" class="nav-link">
-              <Mail :size="18" />
-              Kontakt
-            </router-link>
-          </div>
-        </div>
+        <!-- Left side - empty for now -->
+        <div class="navbar-left"></div>
         
-        <!-- Right side - Brand and Login -->
+        <!-- Right side - Brand Header and Login -->
         <div class="navbar-right">
           <div class="brand-header">
-            <Building2 :size="40" class="brand-icon" />
+            <Building2 :size="48" class="brand-icon" />
             <h1 class="brand-title">Grannskapet</h1>
           </div>
           
-          <div class="nav-actions">
-            <router-link to="/demo" class="demo-link">
-              <Eye :size="16" />
-              Demo
-            </router-link>
-            <router-link to="/login" class="login-link">
-              <Lock :size="16" />
-              Logga in
-            </router-link>
-          </div>
+          <router-link to="/login" class="login-link">
+            <Lock :size="16" />
+            Logga in här
+          </router-link>
         </div>
       </div>
     </nav>
@@ -284,8 +263,7 @@ import {
   CircleCheckBig,
   Calendar,
   TrendingUp,
-  Building,
-  Home
+  Building
 } from 'lucide-vue-next';
 import type { Association } from '@/types';
 
@@ -368,143 +346,11 @@ const goToAssociation = (id: string) => {
   background: var(--hgf-gray-bg);
 }
 
-/* Navigation Bar */
-.navbar {
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0, 102, 179, 0.1);
-}
-
-.navbar-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0.75rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar-left {
-  flex: 1;
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem 1rem;
-  color: var(--hgf-gray-dark);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.nav-link:hover {
-  color: var(--hgf-red);
-  background: rgba(227, 6, 19, 0.05);
-}
-
-.nav-link.router-link-active {
-  color: var(--hgf-blue);
-  background: rgba(0, 102, 179, 0.08);
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.navbar-right .brand-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-right: 1rem;
-}
-
-.navbar-right .brand-icon {
-  color: var(--hgf-blue);
-  transition: transform 0.2s ease;
-}
-
-.navbar-right .brand-header:hover .brand-icon {
-  transform: scale(1.05);
-}
-
-.navbar-right .brand-title {
-  color: var(--hgf-red);
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: -0.02em;
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.demo-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  color: var(--hgf-blue);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-.demo-link:hover {
-  background: rgba(0, 102, 179, 0.08);
-  color: var(--hgf-blue-dark);
-}
-
-.login-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
-  background: white;
-  color: var(--hgf-blue);
-  border: 2px solid var(--hgf-blue);
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-  box-shadow: 0 1px 3px rgba(0, 102, 179, 0.1);
-}
-
-.login-link:hover {
-  background: var(--hgf-blue);
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.25);
-}
-
 /* Hero Section with Light Background (RED only for title) */
 .hero-section {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   color: var(--hgf-gray-dark);
-  padding: 6rem 2rem 6rem;
+  padding: 4rem 2rem 6rem;
   text-align: center;
 }
 
@@ -797,6 +643,78 @@ const goToAssociation = (id: string) => {
 .no-results p {
   color: var(--hgf-gray-medium);
   font-size: 1.1rem;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left {
+  flex: 1;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-right .brand-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-right .brand-icon {
+  color: var(--hgf-blue);
+}
+
+.navbar-right .brand-title {
+  color: var(--hgf-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.navbar-right .login-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-right .login-link:hover {
+  background: var(--hgf-blue);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Add padding to hero section to account for fixed navbar */
+.hero-section {
+  padding-top: 6rem;
 }
 
 /* Footer Container */
