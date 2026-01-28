@@ -110,13 +110,122 @@
       </div>
     </section>
 
-    <!-- Board Login Link -->
-    <div class="board-login-link">
-      <p>Är du styrelsemedlem?</p>
-      <router-link to="/login" class="login-link">
-        <Lock :size="16" />
-        Logga in här
-      </router-link>
+    <!-- Footer Content -->
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-brand">
+            <div class="brand-header">
+              <Building2 :size="24" class="brand-icon" />
+              <h3 class="footer-title">Grannskapet</h3>
+            </div>
+            <p class="footer-text">Digital plattform för hyresgästföreningar</p>
+            <div class="footer-description">
+              <p>En modern, komplett plattform för att hantera din hyresgästförening. Från möteshantering och dokument till budget och lokalbokning - allt på ett ställe.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <div class="section-header">
+            <Link :size="24" class="section-icon" />
+            <h4 class="footer-subtitle">Länkar</h4>
+          </div>
+          <ul class="footer-links">
+            <li>
+              <a href="#" class="footer-link">
+                <Info :size="24" class="link-icon" />
+                <span>Om oss</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                <Mail :size="24" class="link-icon" />
+                <span>Kontakt</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                <CircleQuestionMark :size="24" class="link-icon" />
+                <span>Support</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <div class="section-header">
+            <Shield :size="24" class="section-icon" />
+            <h4 class="footer-subtitle">Juridiskt</h4>
+          </div>
+          <ul class="footer-links">
+            <li>
+              <a href="#" class="footer-link">
+                <Eye :size="24" class="link-icon" />
+                <span>Integritetspolicy</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                <FileText :size="24" class="link-icon" />
+                <span>Användarvillkor</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">
+                <Cookie :size="24" class="link-icon" />
+                <span>Cookies</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <div class="section-header">
+            <Rocket :size="24" class="section-icon" />
+            <h4 class="footer-subtitle">Demo Info</h4>
+          </div>
+          <div class="demo-info">
+            <div class="demo-item">
+              <CircleCheckBig :size="24" class="demo-icon" />
+              <span>Fullständig frontend demo</span>
+            </div>
+            <div class="demo-item">
+              <Users :size="24" class="demo-icon" />
+              <span>Rollbaserad åtkomst</span>
+            </div>
+            <div class="demo-item">
+              <Calendar :size="24" class="demo-icon" />
+              <span>Möteshantering</span>
+            </div>
+            <div class="demo-item">
+              <FileText :size="24" class="demo-icon" />
+              <span>Dokumenthantering</span>
+            </div>
+            <div class="demo-item">
+              <TrendingUp :size="24" class="demo-icon" />
+              <span>Budget & Rapporter</span>
+            </div>
+            <div class="demo-item">
+              <Building :size="24" class="demo-icon" />
+              <span>Lokalbokning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Board Login Link -->
+      <div class="board-login-link">
+        <p>Är du styrelsemedlem?</p>
+        <router-link to="/login" class="login-link">
+          <Lock :size="16" />
+          Logga in här
+        </router-link>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Grannskapet. Alla rättigheter förbehållna.</p>
+      </div>
     </div>
   </div>
 </template>
@@ -125,7 +234,29 @@
 import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useMockDataStore } from '@/stores/mockData';
-import { Building2, MapPin, Search, Navigation, Users, ArrowRight, AlertCircle, Lock } from 'lucide-vue-next';
+import { 
+  Building2, 
+  MapPin, 
+  Search, 
+  Navigation, 
+  Users, 
+  ArrowRight, 
+  AlertCircle, 
+  Lock,
+  Link,
+  Info,
+  Mail,
+  CircleQuestionMark,
+  Shield,
+  Eye,
+  FileText,
+  Cookie,
+  Rocket,
+  CircleCheckBig,
+  Calendar,
+  TrendingUp,
+  Building
+} from 'lucide-vue-next';
 import type { Association } from '@/types';
 
 const router = useRouter();
@@ -506,32 +637,164 @@ const goToAssociation = (id: string) => {
   font-size: 1.1rem;
 }
 
+/* Footer Container */
+.footer-container {
+  background: var(--hgf-blue);
+  color: white;
+  padding: 3rem 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand .brand-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-brand .brand-icon {
+  color: white;
+}
+
+.footer-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1rem 0;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.section-icon {
+  color: white;
+}
+
+.footer-subtitle {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: white;
+}
+
+.link-icon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.demo-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.demo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.demo-icon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* Board Login Link */
 .board-login-link {
   text-align: center;
-  padding: 2rem;
-  background: white;
-  border-top: 1px solid var(--hgf-gray-border);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
 }
 
 .board-login-link p {
-  margin: 0 0 0.5rem 0;
-  color: var(--hgf-gray-medium);
+  margin: 0 0 1rem 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
 }
 
 .login-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: white;
   color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .login-link:hover {
-  color: var(--hgf-blue-dark);
-  text-decoration: underline;
+  background: var(--hgf-blue);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 /* Responsive */
