@@ -99,7 +99,7 @@ const handleLogout = () => {
 .navbar-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 0.4rem; /* Reduced padding by 80% (2rem -> 0.4rem) */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,7 +133,8 @@ const handleLogout = () => {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 2rem;
+  gap: 0.4rem; /* Reduced gap by 80% (2rem -> 0.4rem) */
+  margin-left: auto; /* Push to the right */
 }
 
 .mobile-menu-toggle {
