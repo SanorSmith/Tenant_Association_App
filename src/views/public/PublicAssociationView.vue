@@ -414,14 +414,16 @@ const handleFormSuccess = (message: string) => {
 }
 
 .action-btn.primary {
-  background: var(--hgf-green);
-  color: white;
+  background: white;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
 }
 
 .action-btn.primary:hover {
-  background: var(--hgf-green-dark);
+  background: var(--hgf-blue);
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 166, 81, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.3);
 }
 
 .action-btn.secondary {
