@@ -704,18 +704,18 @@ const handleFormSuccess = (message: string) => {
   color: var(--hgf-gray-dark);
 }
 
-/* Responsive */
+/* Responsive Design - Mobile First */
+
+/* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
   .content-container {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 0 1.5rem;
   }
 
   .action-sidebar {
     position: static;
     order: -1;
-    margin-bottom: 2rem;
   }
 
   .action-buttons {
@@ -735,15 +735,23 @@ const handleFormSuccess = (message: string) => {
   }
 }
 
+/* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
+  .public-page {
+    margin-top: 70px;
+  }
+
   .association-hero {
     padding: 2rem 0;
   }
 
+  .hero-container {
+    padding: 0 1rem;
+  }
+
   .hero-content {
     flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .hero-icon {
@@ -753,58 +761,6 @@ const handleFormSuccess = (message: string) => {
 
   .hero-title {
     font-size: 2rem;
-    text-align: center;
-  }
-
-  .hero-location {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .hero-description {
-    text-align: center;
-  }
-
-  .hero-back-button {
-    align-self: center;
-  }
-
-  .main-content {
-    padding: 2rem 0;
-  }
-
-  .sidebar-card {
-    padding: 1.5rem;
-  }
-
-  .sidebar-title {
-    font-size: 1.25rem;
-    text-align: center;
-  }
-
-  .action-btn {
-    padding: 0.875rem;
-    font-size: 0.9rem;
-  }
-
-  .feed-title {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .public-page {
-    margin-top: 60px; /* Reduced for mobile */
-  }
-
-  .hero-container {
-    padding: 0 1rem;
-  }
-
-  .hero-title {
-    font-size: 1.75rem;
-    line-height: 1.2;
   }
 
   .hero-location {
@@ -816,26 +772,21 @@ const handleFormSuccess = (message: string) => {
   }
 
   .hero-back-button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
   }
 
   .content-container {
     padding: 0 1rem;
-    gap: 1.5rem;
-  }
-
-  .action-sidebar {
-    margin-bottom: 1.5rem;
   }
 
   .sidebar-card {
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 
   .sidebar-title {
-    font-size: 1.125rem;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
   }
 
   .action-buttons {
@@ -844,9 +795,93 @@ const handleFormSuccess = (message: string) => {
   }
 
   .action-btn {
-    padding: 0.75rem;
-    font-size: 0.875rem;
-    border-radius: 10px;
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .feed-title {
+    font-size: 1.5rem;
+  }
+
+  .activity-card {
+    padding: 1.25rem;
+  }
+
+  .activity-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .activity-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .activity-image {
+    height: 180px;
+  }
+
+  .not-found {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .public-page {
+    margin-top: 65px;
+  }
+
+  .association-hero {
+    padding: 1.5rem 0;
+  }
+
+  .hero-container {
+    padding: 0 0.75rem;
+  }
+
+  .hero-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .hero-location {
+    font-size: 0.85rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero-back-button {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .content-container {
+    padding: 0 0.75rem;
+    gap: 1.5rem;
+  }
+
+  .sidebar-card {
+    padding: 1.25rem;
+  }
+
+  .sidebar-title {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+  }
+
+  .action-btn {
+    padding: 0.85rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
   }
 
   .btn-icon {
@@ -854,74 +889,51 @@ const handleFormSuccess = (message: string) => {
     height: 18px;
   }
 
-  .main-content {
-    padding: 1.5rem 0;
-  }
-
   .feed-title {
-    font-size: 1.375rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .activity-card {
-    padding: 1.25rem;
+    padding: 1rem;
   }
 
-  .activity-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .activity-header h3 {
+    font-size: 1rem;
   }
 
   .activity-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-
-  .activity-image {
-    height: 180px;
-  }
-
-  .activity-content {
-    margin-top: 1rem;
-  }
-
-  .activity-title {
-    font-size: 1.125rem;
+    font-size: 0.85rem;
   }
 
   .activity-description {
     font-size: 0.9rem;
   }
 
+  .activity-image {
+    height: 160px;
+  }
+
   .confirmation-toast {
-    margin: 0 1rem;
-    padding: 1rem;
+    bottom: 1rem;
+    left: 0.75rem;
+    right: 0.75rem;
   }
 
   .toast-content {
-    gap: 0.75rem;
-  }
-
-  .toast-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .toast-message {
+    padding: 0.85rem;
     font-size: 0.9rem;
-  }
-
-  .toast-close {
-    width: 20px;
-    height: 20px;
   }
 }
 
-@media (max-width: 480px) {
+/* Extra Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+  }
+
+  .hero-icon {
+    width: 45px;
+    height: 45px;
   }
 
   .sidebar-card {
@@ -929,29 +941,16 @@ const handleFormSuccess = (message: string) => {
   }
 
   .action-btn {
-    padding: 0.625rem;
-    font-size: 0.8rem;
-  }
-
-  .btn-icon {
-    width: 16px;
-    height: 16px;
+    padding: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .activity-card {
-    padding: 1rem;
+    padding: 0.85rem;
   }
 
   .activity-image {
-    height: 160px;
-  }
-
-  .activity-title {
-    font-size: 1rem;
-  }
-
-  .activity-description {
-    font-size: 0.85rem;
+    height: 140px;
   }
 }
 </style>
