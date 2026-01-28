@@ -817,30 +817,40 @@ const goToAssociation = (id: string) => {
   margin-bottom: 0.75rem;
 }
 
-.footer-link {
+.footer-link,
+.footer-link span,
+.footer-link a,
+.footer-link router-link {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8) !important;
   text-decoration: none;
   transition: all 0.3s ease;
   padding: 0.5rem 0;
   border-radius: 4px;
 }
 
-.footer-link:hover {
-  color: white;
+.footer-link:hover,
+.footer-link:hover span,
+.footer-link:hover a,
+.footer-link:hover router-link {
+  color: white !important;
   background: rgba(255, 255, 255, 0.1);
   transform: translateX(4px);
 }
 
-.footer-link .link-icon {
-  color: rgba(255, 255, 255, 0.7);
+.footer-link .link-icon,
+.footer-link a .link-icon,
+.footer-link router-link .link-icon {
+  color: rgba(255, 255, 255, 0.7) !important;
   transition: color 0.3s ease;
 }
 
-.footer-link:hover .link-icon {
-  color: white;
+.footer-link:hover .link-icon,
+.footer-link:hover a .link-icon,
+.footer-link:hover router-link .link-icon {
+  color: white !important;
 }
 
 .demo-info {
@@ -849,28 +859,32 @@ const goToAssociation = (id: string) => {
   gap: 0.75rem;
 }
 
-.demo-item {
+.demo-item,
+.demo-item span {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8) !important;
   font-size: 0.9rem;
   transition: all 0.3s ease;
   padding: 0.25rem 0;
 }
 
-.demo-item:hover {
-  color: white;
+.demo-item:hover,
+.demo-item:hover span {
+  color: white !important;
   transform: translateX(2px);
 }
 
-.demo-icon {
-  color: rgba(255, 255, 255, 0.7);
+.demo-icon,
+.demo-item .demo-icon {
+  color: rgba(255, 255, 255, 0.7) !important;
   transition: color 0.3s ease;
 }
 
+.demo-item:hover .demo-icon,
 .demo-item:hover .demo-icon {
-  color: white;
+  color: white !important;
 }
 
 
