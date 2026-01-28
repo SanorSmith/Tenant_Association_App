@@ -167,7 +167,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useMockDataStore } from '@/stores/mockData';
 import { format } from 'date-fns';
@@ -260,6 +260,11 @@ const handleFormSuccess = (message: string) => {
     confirmationMessage.value = '';
   }, 8000);
 };
+
+// Listen for proposal form event from navbar
+onMounted(() => {
+  window.addEventListener('open-proposal-form', openProposalForm);
+});
 </script>
 
 <style scoped>

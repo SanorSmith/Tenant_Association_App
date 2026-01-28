@@ -18,6 +18,10 @@
             <ArrowLeft class="w-5 h-5" />
             Tillbaka till sökning
           </button>
+          <button v-if="showProposalButton" @click="openProposalForm" class="proposal-button">
+            <FileText class="w-5 h-5" />
+            Lämna förslag
+          </button>
         </div>
       </div>
     </nav>
@@ -141,13 +145,13 @@
 import {
   Building2,
   ArrowLeft,
+  FileText,
   Link,
   Info,
   Mail,
   CircleQuestionMark,
   Shield,
   Eye,
-  FileText,
   Cookie,
   Rocket,
   CircleCheckBig,
@@ -169,6 +173,16 @@ const goBack = () => {
 const showBackButton = computed(() => {
   return route.path.startsWith('/association/') && route.path.includes('/public');
 });
+
+const showProposalButton = computed(() => {
+  return route.path.startsWith('/association/') && route.path.includes('/public');
+});
+
+const openProposalForm = () => {
+  // Emit event to parent component to open proposal form
+  const event = new CustomEvent('open-proposal-form');
+  window.dispatchEvent(event);
+};
 </script>
 
 <style scoped>
@@ -250,6 +264,27 @@ const showBackButton = computed(() => {
 }
 
 .back-button:hover {
+  background: var(--hgf-blue);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.proposal-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.proposal-button:hover {
   background: var(--hgf-blue);
   color: white;
   transform: translateY(-1px);
