@@ -353,18 +353,18 @@ onMounted(() => {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1.5rem;
-  background: linear-gradient(135deg, var(--hgf-blue) 0%, var(--hgf-blue-dark) 100%);
+  background: transparent;
   border-radius: 12px;
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.2);
+  color: var(--hgf-gray-dark);
+  box-shadow: none;
 }
 
 .dashboard-header h1 {
-  color: white !important;
+  color: var(--hgf-red) !important;
 }
 
 .dashboard-header p {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--hgf-gray-medium) !important;
 }
 
 .quick-actions {
