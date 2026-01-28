@@ -661,8 +661,7 @@ const goToAssociation = (id: string) => {
 }
 
 .navbar-content {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
