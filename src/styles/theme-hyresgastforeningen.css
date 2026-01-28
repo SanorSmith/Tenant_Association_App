@@ -73,8 +73,26 @@ button[type="submit"],
 
 /* Outline buttons - transparent background, blue border/text */
 button.bg-transparent,
-.bg-transparent {
+.bg-transparent,
+button[class*="bg-transparent"],
+[class*="bg-transparent"] {
   background-color: transparent !important;
+}
+
+/* Ensure text-primary is blue for outline buttons */
+button.bg-transparent.text-primary,
+.bg-transparent.text-primary,
+button[class*="bg-transparent"][class*="text-primary"],
+[class*="bg-transparent"][class*="text-primary"] {
+  color: var(--hgf-blue) !important;
+}
+
+/* Ensure border-primary is blue for outline buttons */
+button.bg-transparent.border-primary,
+.bg-transparent.border-primary,
+button[class*="bg-transparent"][class*="border-primary"],
+[class*="bg-transparent"][class*="border-primary"] {
+  border-color: var(--hgf-blue) !important;
 }
 
 button.bg-primary:hover,
@@ -87,7 +105,16 @@ button[type="submit"]:hover,
 
 /* Outline button hover - blue background, white text */
 button.bg-transparent:hover,
-.bg-transparent:hover {
+.bg-transparent:hover,
+button[class*="bg-transparent"]:hover,
+[class*="bg-transparent"]:hover {
+  background-color: var(--hgf-blue) !important;
+  color: white !important;
+}
+
+/* Specific hover for buttons with both bg-transparent and hover:bg-primary */
+button[class*="bg-transparent"][class*="hover:bg-primary"]:hover,
+[class*="bg-transparent"][class*="hover:bg-primary"]:hover {
   background-color: var(--hgf-blue) !important;
   color: white !important;
 }
