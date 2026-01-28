@@ -145,11 +145,13 @@ input[type="radio"]:checked {
    ======================================== */
 a:not(.no-style):not(.btn):not(.button) {
   color: var(--hgf-blue);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+  text-decoration: none;
 }
 
 a:not(.no-style):not(.btn):not(.button):hover {
-  color: var(--hgf-red);
+  color: var(--hgf-blue-dark);
+  text-decoration: underline;
 }
 
 /* ========================================
