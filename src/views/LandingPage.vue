@@ -784,7 +784,7 @@ const goToAssociation = (id: string) => {
 }
 
 .footer-description {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -855,10 +855,22 @@ const goToAssociation = (id: string) => {
   gap: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.demo-item:hover {
+  color: white;
+  transform: translateX(2px);
 }
 
 .demo-icon {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.demo-item:hover .demo-icon {
+  color: white;
 }
 
 
