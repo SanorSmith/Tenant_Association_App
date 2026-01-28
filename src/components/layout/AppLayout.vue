@@ -173,9 +173,8 @@ import {
 }
 
 .navbar-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 0;
+  width: 100%;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
