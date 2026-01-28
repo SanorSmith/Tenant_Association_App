@@ -162,24 +162,24 @@ import {
   background: var(--hgf-gray-bg);
 }
 
-/* Navbar Styles */
+/* Navbar Styles - Same as LandingPage */
 .navbar {
   background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
 }
 
 .navbar-content {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-left {
@@ -207,7 +207,7 @@ import {
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .nav-link {
