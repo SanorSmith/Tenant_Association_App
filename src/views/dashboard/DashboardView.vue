@@ -352,11 +352,6 @@ onMounted(() => {
   margin-bottom: 2rem;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 1.5rem;
-  background: transparent;
-  border-radius: 12px;
-  color: var(--hgf-gray-dark);
-  box-shadow: none;
 }
 
 .dashboard-header h1 {
