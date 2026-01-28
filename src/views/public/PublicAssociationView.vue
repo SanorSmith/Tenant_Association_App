@@ -297,7 +297,7 @@ const handleFormSuccess = (message: string) => {
 .association-hero {
   background: var(--hgf-gray-bg);
   color: var(--hgf-gray-dark);
-  padding: 6rem 0;
+  padding: 3rem 0;
 }
 
 .hero-container {

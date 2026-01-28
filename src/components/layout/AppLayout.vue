@@ -272,10 +272,12 @@ const showBoardLogin = computed(() => {
 .brand-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   text-decoration: none;
   color: inherit;
   outline: none;
+  transform: scale(2);
+  transform-origin: left center;
 }
 
 .brand-header:focus {
