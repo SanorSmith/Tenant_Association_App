@@ -3,7 +3,7 @@
     <div class="dashboard-view">
       <div class="dashboard-header">
         <div>
-          <h1 style="color: var(--hgf-red);" class="text-3xl font-bold">Översikt</h1>
+          <h1 style="color: var(--hgf-red) !important;" class="text-3xl font-bold">Översikt</h1>
           <p class="text-text-secondary mt-2">Välkommen tillbaka, {{ currentUser.fullName }}!</p>
         </div>
         <div v-if="currentUser.role === 'administrator'" class="quick-actions">
