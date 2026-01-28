@@ -418,6 +418,14 @@ const handleFormSuccess = (message: string) => {
   margin-bottom: 2rem;
 }
 
+/* Center content on big screens */
+@media (min-width: 1200px) {
+  .action-btn {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .action-btn {
   display: flex;
   align-items: center;

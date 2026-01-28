@@ -254,49 +254,20 @@ const showBoardLogin = computed(() => {
   outline: none;
 }
 
-.brand-icon {
-  width: 48px;
-  height: 48px;
-}
-
-.brand-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-/* Desktop: Brand on left, aligned with hero content */
-@media (min-width: 769px) {
-  .navbar-content {
-    padding: 1rem 2rem 1rem 2rem;
-  }
-  
-  .navbar-left {
-    justify-content: flex-start;
-    padding-left: 0;
-  }
-  
-  .mobile-menu-toggle {
-    display: none;
-  }
-  
-  .brand-header {
-    transform: scale(2);
-    margin-left: 0;
-  }
-  
-  .brand-icon {
-    width: 96px;
-    height: 96px;
-  }
-  
-  .brand-title {
-    font-size: 3rem;
-  }
-}
-
 .brand-header:focus {
   outline: none;
   box-shadow: none;
+}
+
+.brand-icon {
+  color: var(--hgf-blue);
+}
+
+.brand-title {
+  color: var(--hgf-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .navbar-right {
@@ -379,8 +350,7 @@ const showBoardLogin = computed(() => {
 .mobile-menu-toggle {
   display: none;
   background: none;
-  border: 2px solid red;
-  border-radius: 8px;
+  border: none;
   color: var(--hgf-blue);
   cursor: pointer;
   padding: 0.25rem;
