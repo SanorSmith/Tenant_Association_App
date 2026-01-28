@@ -278,20 +278,19 @@ const showBoardLogin = computed(() => {
   outline: none;
 }
 
-/* Responsive Brand Header - Big Screens Only */
+/* Big screens - Double brand size */
 @media (min-width: 1024px) {
   .brand-header {
-    gap: 1.5rem;
+    gap: 2rem;
   }
   
-  .brand-icon {
+  .brand-header .brand-icon {
     width: 96px !important;
     height: 96px !important;
   }
   
-  .brand-title {
-    font-size: 3rem;
-    font-weight: 700;
+  .brand-header .brand-title {
+    font-size: 3rem !important;
   }
 }
 
