@@ -13,15 +13,42 @@
         
         <!-- Right side - Navigation Links -->
         <div class="navbar-right">
-          <router-link to="/" class="nav-link">Hem</router-link>
-          <div v-if="showBoardLogin" class="board-login-nav">
-            <p class="login-text">Styrelsemedlem?</p>
-            <router-link to="/login" class="login-button">
+          <!-- Desktop Navigation -->
+          <div class="desktop-nav">
+            <router-link to="/" class="nav-link">Hem</router-link>
+            <div v-if="showBoardLogin" class="board-login-nav">
+              <p class="login-text">Styrelsemedlem?</p>
+              <router-link to="/login" class="login-button">
+                <Lock class="w-4 h-4" />
+                Logga in
+              </router-link>
+            </div>
+          </div>
+          
+          <!-- Mobile Menu Toggle -->
+          <button @click="toggleMobileMenu" class="mobile-menu-toggle">
+            <Menu class="w-6 h-6" />
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div v-if="showMobileMenu" class="mobile-menu">
+        <div class="mobile-menu-content">
+          <router-link to="/" class="mobile-nav-link" @click="closeMobileMenu">Hem</router-link>
+          <div v-if="showBoardLogin" class="mobile-board-login">
+            <p class="mobile-login-text">Styrelsemedlem?</p>
+            <router-link to="/login" class="mobile-login-button">
               <Lock class="w-4 h-4" />
               Logga in
             </router-link>
           </div>
+          <button v-if="showBackButton" @click="handleMobileBack" class="mobile-back-button">
+            <ArrowLeft class="w-5 h-5" />
+            Tillbaka till sökning
+          </button>
         </div>
+      </div>
       </div>
     </nav>
 
@@ -144,6 +171,7 @@
 import {
   Building2,
   ArrowLeft,
+  Menu,
   Lock,
   Link,
   Info,
@@ -160,7 +188,7 @@ import {
   TrendingUp,
   Building
 } from 'lucide-vue-next';
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
@@ -177,6 +205,21 @@ const showBackButton = computed(() => {
 const showBoardLogin = computed(() => {
   return route.path.startsWith('/association/') && route.path.includes('/public');
 });
+
+const showMobileMenu = ref(false);
+
+const toggleMobileMenu = () => {
+  showMobileMenu.value = !showMobileMenu.value;
+};
+
+const closeMobileMenu = () => {
+  showMobileMenu.value = false;
+};
+
+const handleMobileBack = () => {
+  router.go(-1);
+  closeMobileMenu();
+};
 </script>
 
 <style scoped>
@@ -307,6 +350,103 @@ const showBoardLogin = computed(() => {
 }
 
 .login-button:hover {
+  background: var(--hgf-blue-dark);
+  transform: translateY(-1px);
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--hgf-blue);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--hgf-gray-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.mobile-menu-content {
+  padding: 1rem;
+}
+
+.mobile-nav-link {
+  display: block;
+  color: var(--hgf-blue);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  background: var(--hgf-gray-bg);
+}
+
+.mobile-board-login {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--hgf-gray-light);
+}
+
+.mobile-login-text {
+  color: var(--hgf-gray-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.mobile-login-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--hgf-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.mobile-login-button:hover {
+  background: var(--hgf-blue-dark);
+}
+
+.mobile-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.mobile-back-button:hover {
   background: var(--hgf-blue);
   color: white;
   transform: translateY(-1px);
@@ -511,6 +651,18 @@ const showBoardLogin = computed(() => {
   
   .main-content {
     margin-top: 120px; /* Account for taller navbar on mobile */
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
   }
 }
 
