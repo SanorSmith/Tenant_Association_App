@@ -271,6 +271,10 @@ const showBoardLogin = computed(() => {
     padding-left: 2rem;
   }
   
+  .navbar-content {
+    padding-left: 2rem;
+  }
+  
   .mobile-menu-toggle {
     display: none;
   }
