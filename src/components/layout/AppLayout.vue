@@ -267,7 +267,7 @@ const showBoardLogin = computed(() => {
 /* Desktop: Brand on left, aligned with hero content */
 @media (min-width: 769px) {
   .navbar-content {
-    padding-left: 2rem;
+    padding: 1rem 2rem 1rem 2rem;
   }
   
   .navbar-left {
@@ -281,6 +281,7 @@ const showBoardLogin = computed(() => {
   
   .brand-header {
     transform: scale(2);
+    margin-left: 0;
   }
   
   .brand-icon {
