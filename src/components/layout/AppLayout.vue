@@ -238,14 +238,30 @@ const showBoardLogin = computed(() => {
   position: relative;
 }
 
-/* Big screens - hide logo */
+/* Big screens - brand on left, double size */
 @media (min-width: 1024px) {
+  .navbar {
+    height: 120px; /* Increased height for double-sized logo */
+  }
+  
+  .navbar-content {
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-left {
+    justify-content: flex-start;
+  }
+  
   .brand-header {
-    display: none;
+    transform: scale(2);
   }
   
   .mobile-menu-toggle {
     display: none !important;
+  }
+  
+  .main-content {
+    margin-top: 120px; /* Account for taller navbar on big screens */
   }
 }
 
