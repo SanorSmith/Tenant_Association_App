@@ -722,7 +722,8 @@ const goToAssociation = (id: string) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 6rem);
+  min-height: 60vh;
+  max-height: 80vh;
 }
 
 .hero-content {
@@ -925,7 +926,8 @@ const goToAssociation = (id: string) => {
   /* Hero Section */
   .hero-section {
     padding-top: 5rem;
-    min-height: calc(100vh - 5rem);
+    min-height: 50vh;
+    max-height: 70vh;
   }
   
   .hero-content {
@@ -1062,7 +1064,8 @@ const goToAssociation = (id: string) => {
   /* Hero Section */
   .hero-section {
     padding-top: 4.5rem;
-    min-height: calc(100vh - 4.5rem);
+    min-height: 40vh;
+    max-height: 60vh;
   }
   
   .hero-content {
