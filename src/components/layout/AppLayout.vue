@@ -431,23 +431,24 @@ const showBoardLogin = computed(() => {
 .mobile-back-button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  width: 100%;
+  gap: 0.75rem;
   padding: 0.75rem 1rem;
-  background: transparent;
-  color: var(--hgf-blue);
-  border: 2px solid var(--hgf-blue);
+  color: var(--hgf-gray-dark);
+  text-decoration: none;
   border-radius: 8px;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  width: 100%;
   text-align: left;
   margin-top: 0.5rem;
 }
 
 .mobile-back-button:hover {
-  background: var(--hgf-blue);
-  color: white;
+  background: var(--hgf-gray-bg);
+  color: var(--hgf-blue);
 }
 
 /* Responsive Styles */
