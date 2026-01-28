@@ -33,18 +33,15 @@
         
         <!-- Mobile Menu -->
         <div v-if="showMobileMenu" class="mobile-menu">
-          <router-link to="/" class="mobile-nav-link" @click="closeMobileMenu">
+          <router-link v-if="!showBoardLogin" to="/" class="mobile-nav-link" @click="closeMobileMenu">
             <Home class="w-5 h-5" />
             Hem
           </router-link>
-          <div v-if="showBoardLogin" class="mobile-board-login">
-            <p class="mobile-login-text">Styrelsemedlem?</p>
-            <router-link to="/login" class="mobile-login-button" @click="closeMobileMenu">
-              <Lock class="w-4 h-4" />
-              Logga in
-            </router-link>
-          </div>
-          <button v-if="showBackButton" @click="handleMobileBack" class="mobile-back-button">
+          <router-link v-if="showBoardLogin" to="/login" class="mobile-nav-link" @click="closeMobileMenu">
+            <Lock class="w-5 h-5" />
+            Styrelsemedlem? Logga in
+          </router-link>
+          <button v-if="showBackButton" @click="handleMobileBack" class="mobile-nav-link">
             <ArrowLeft class="w-5 h-5" />
             Tillbaka till sökning
           </button>
@@ -396,60 +393,6 @@ const showBoardLogin = computed(() => {
   color: var(--hgf-blue);
 }
 
-.mobile-board-login {
-  padding: 1rem;
-  border-top: 1px solid var(--hgf-gray-light);
-  margin-top: 0.5rem;
-}
-
-.mobile-login-text {
-  color: var(--hgf-gray-dark);
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
-.mobile-login-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--hgf-blue);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.mobile-login-button:hover {
-  background: var(--hgf-blue-dark);
-}
-
-.mobile-back-button {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  color: var(--hgf-gray-dark);
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background: none;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  margin-top: 0.5rem;
-}
-
-.mobile-back-button:hover {
-  background: var(--hgf-gray-bg);
-  color: var(--hgf-blue);
-}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
