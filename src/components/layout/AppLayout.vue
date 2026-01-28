@@ -360,7 +360,13 @@ const showBoardLogin = computed(() => {
   border: none;
   color: var(--hgf-blue);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.25rem;
+}
+
+.mobile-menu-toggle svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 3;
 }
 
 .mobile-menu {
