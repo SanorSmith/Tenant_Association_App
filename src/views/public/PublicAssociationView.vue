@@ -405,7 +405,7 @@ const handleFormSuccess = (message: string) => {
 }
 
 .sidebar-card {
-  background: white;
+  background: var(--hgf-blue);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -414,7 +414,7 @@ const handleFormSuccess = (message: string) => {
 .sidebar-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--hgf-gray-dark);
+  color: white;
   margin-bottom: 1.5rem;
 }
 
@@ -442,20 +442,19 @@ const handleFormSuccess = (message: string) => {
 .action-btn.primary {
   background: white;
   color: var(--hgf-blue);
-  border: 2px solid var(--hgf-blue);
+  border: 2px solid white;
 }
 
 .action-btn.primary:hover {
-  background: var(--hgf-blue);
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.3);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
 .action-btn.secondary {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   color: var(--hgf-blue);
-  border: 2px solid var(--hgf-blue);
+  border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
 .action-btn.secondary:hover {
