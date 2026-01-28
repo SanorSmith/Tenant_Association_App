@@ -3,15 +3,13 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- Left side - Empty for balance -->
+        <!-- Left side - Brand Header -->
         <div class="navbar-left">
+          <router-link to="/" class="brand-header">
+            <Building2 :size="48" class="brand-icon" />
+            <h1 class="brand-title">Grannskapet</h1>
+          </router-link>
         </div>
-        
-        <!-- Center - Brand Header -->
-        <router-link to="/" class="brand-header">
-          <Building2 :size="48" class="brand-icon" />
-          <h1 class="brand-title">Grannskapet</h1>
-        </router-link>
         
         <!-- Right side - Navigation Links -->
         <div class="navbar-right">
@@ -181,13 +179,11 @@ import {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  flex: 1;
 }
 
 .brand-header {
@@ -196,9 +192,6 @@ import {
   gap: 1rem;
   text-decoration: none;
   color: inherit;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .brand-icon {
@@ -215,6 +208,7 @@ import {
 .navbar-right {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 2rem;
 }
 
