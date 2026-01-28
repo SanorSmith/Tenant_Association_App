@@ -257,20 +257,26 @@ const showBoardLogin = computed(() => {
 .brand-icon {
   width: 48px;
   height: 48px;
-  color: var(--hgf-blue);
 }
 
 .brand-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--hgf-red);
-  margin: 0;
 }
 
-/* Big screen styles */
+/* Desktop: Brand on left, aligned with hero content */
 @media (min-width: 769px) {
   .navbar-left {
     justify-content: flex-start;
+    padding-left: 2rem;
+  }
+  
+  .mobile-menu-toggle {
+    display: none;
+  }
+  
+  .brand-header {
+    transform: scale(2);
   }
   
   .brand-icon {
