@@ -442,7 +442,7 @@ const handleFormSuccess = (message: string) => {
 .action-btn.primary {
   background: white;
   color: var(--hgf-blue);
-  border: 2px solid var(--hgf-blue);
+  border: none;
 }
 
 .action-btn.primary:hover {
@@ -455,7 +455,7 @@ const handleFormSuccess = (message: string) => {
 .action-btn.secondary {
   background: white;
   color: var(--hgf-blue);
-  border: 2px solid var(--hgf-blue);
+  border: none;
 }
 
 .action-btn.secondary:hover {
