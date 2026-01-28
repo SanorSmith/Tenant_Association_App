@@ -233,6 +233,7 @@ const showBoardLogin = computed(() => {
 .navbar-left {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   margin-left: 0;
   padding-left: 0;
