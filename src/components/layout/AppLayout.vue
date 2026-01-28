@@ -5,9 +5,13 @@
       <div class="navbar-content">
         <!-- Left side - Brand Header -->
         <div class="navbar-left">
+          <!-- Mobile Menu Toggle -->
+          <button @click="toggleMobileMenu" class="mobile-menu-toggle">
+            <Menu class="w-6 h-6" />
+          </button>
           <router-link to="/" class="brand-header">
-            <Building2 :size="48" class="brand-icon" />
             <h1 class="brand-title">Grannskapet</h1>
+            <Building2 :size="48" class="brand-icon" />
           </router-link>
         </div>
         
@@ -24,11 +28,6 @@
               </router-link>
             </div>
           </div>
-          
-          <!-- Mobile Menu Toggle -->
-          <button @click="toggleMobileMenu" class="mobile-menu-toggle">
-            <Menu class="w-6 h-6" />
-          </button>
         </div>
         
         <!-- Mobile Menu -->
@@ -250,6 +249,7 @@ const showBoardLogin = computed(() => {
 .navbar-left {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .brand-header {
