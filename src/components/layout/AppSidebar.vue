@@ -49,6 +49,11 @@
       
       <div class="nav-divider"></div>
       
+      <router-link to="/login" class="nav-item login-nav-item">
+        <Lock class="w-5 h-5" />
+        <span>Logga in</span>
+      </router-link>
+      
       <router-link to="/settings" class="nav-item">
         <Settings class="w-5 h-5" />
         <span>Inställningar</span>
@@ -76,7 +81,7 @@
 </template>
 
 <script setup lang="ts">
-import { LayoutDashboard, Calendar, FileText, DollarSign, Activity, Building, CalendarCheck, Settings, User, X } from 'lucide-vue-next';
+import { LayoutDashboard, Calendar, FileText, DollarSign, Activity, Building, CalendarCheck, Settings, User, X, Lock } from 'lucide-vue-next';
 import { useMockDataStore } from '../../stores/mockData';
 import type { UserRole } from '../../types';
 
@@ -187,6 +192,17 @@ const getRoleLabel = (role: UserRole): string => {
   color: white;
   background: var(--hgf-blue);
   font-weight: var(--font-weight-semibold);
+}
+
+/* Special styling for login item */
+.login-nav-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-nav-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .nav-divider {

@@ -214,15 +214,7 @@
         </div>
       </div>
       
-      <!-- Board Login Link -->
-      <div class="board-login-link">
-        <p>Är du styrelsemedlem?</p>
-        <router-link to="/login" class="login-link">
-          <Lock :size="16" />
-          Logga in här
-        </router-link>
-      </div>
-      
+            
       <div class="footer-bottom">
         <p class="copyright">© 2026 Grannskapet. Alla rättigheter förbehållna.</p>
       </div>
@@ -241,8 +233,7 @@ import {
   Navigation, 
   Users, 
   ArrowRight, 
-  AlertCircle, 
-  Lock,
+  AlertCircle,
   Link,
   Info,
   Mail,
@@ -751,39 +742,6 @@ const goToAssociation = (id: string) => {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Board Login Link */
-.board-login-link {
-  text-align: center;
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 2rem;
-}
-
-.board-login-link p {
-  margin: 0 0 1rem 0;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.1rem;
-}
-
-.login-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: white;
-  color: var(--hgf-blue);
-  border: 2px solid var(--hgf-blue);
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.login-link:hover {
-  background: var(--hgf-blue);
-  color: white;
-  transform: translateY(-2px);
-}
 
 .footer-bottom {
   text-align: center;
