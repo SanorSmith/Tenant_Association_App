@@ -679,6 +679,12 @@ const goToAssociation = (id: string) => {
   gap: 1rem;
   text-decoration: none;
   color: inherit;
+  outline: none;
+}
+
+.navbar-left .brand-header:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .navbar-left .brand-icon {

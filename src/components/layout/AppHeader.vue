@@ -115,6 +115,12 @@ const handleLogout = () => {
   gap: 1rem;
   text-decoration: none;
   color: inherit;
+  outline: none;
+}
+
+.brand-header:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .brand-icon {
