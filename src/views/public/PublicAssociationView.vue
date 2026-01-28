@@ -708,84 +708,69 @@ const handleFormSuccess = (message: string) => {
 @media (max-width: 1024px) {
   .content-container {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem;
   }
 
   .action-sidebar {
     position: static;
+    order: -1;
+    margin-bottom: 2rem;
   }
 
   .action-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
-}
 
-@media (max-width: 640px) {
   .hero-container {
     flex-direction: column;
-    gap: 1rem;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .hero-title {
-    font-size: 1.5rem;
-  }
-
-  .hero-location {
-    justify-content: center;
+    gap: 1.5rem;
   }
 
   .hero-back-button {
     align-self: flex-start;
     margin-top: 0;
   }
+}
 
-  .content-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+@media (max-width: 768px) {
+  .association-hero {
+    padding: 2rem 0;
   }
 
-  .action-sidebar {
-    position: static;
-    order: -1;
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
   }
 
-  .action-buttons {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .hero-icon {
+    width: 60px;
+    height: 60px;
   }
 
-  .action-btn {
-    padding: 0.75rem;
+  .hero-title {
+    font-size: 2rem;
+    text-align: center;
   }
 
-  .news-feed {
-    order: 1;
+  .hero-location {
+    justify-content: center;
+    text-align: center;
   }
 
-  .feed-title {
-    font-size: 1.25rem;
+  .hero-description {
+    text-align: center;
   }
 
-  .activity-card {
-    padding: 1rem;
+  .hero-back-button {
+    align-self: center;
   }
 
-  .activity-image {
-    height: 150px;
-  }
-
-  .activity-content h3 {
-    font-size: 1rem;
-  }
-
-  .activity-content p {
-    font-size: 0.875rem;
+  .main-content {
+    padding: 2rem 0;
   }
 
   .sidebar-card {
@@ -794,20 +779,149 @@ const handleFormSuccess = (message: string) => {
 
   .sidebar-title {
     font-size: 1.25rem;
+    text-align: center;
+  }
+
+  .action-btn {
+    padding: 0.875rem;
+    font-size: 0.9rem;
+  }
+
+  .feed-title {
+    font-size: 1.5rem;
+    text-align: center;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .public-page {
+    margin-top: 60px; /* Reduced for mobile */
+  }
+
   .hero-container {
     padding: 0 1rem;
   }
 
   .hero-title {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .hero-location {
+    font-size: 0.9rem;
   }
 
   .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-back-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .content-container {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .action-sidebar {
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-card {
+    padding: 1.25rem;
+  }
+
+  .sidebar-title {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .action-btn {
+    padding: 0.75rem;
     font-size: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .btn-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .main-content {
+    padding: 1.5rem 0;
+  }
+
+  .feed-title {
+    font-size: 1.375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .activity-card {
+    padding: 1.25rem;
+  }
+
+  .activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .activity-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .activity-image {
+    height: 180px;
+  }
+
+  .activity-content {
+    margin-top: 1rem;
+  }
+
+  .activity-title {
+    font-size: 1.125rem;
+  }
+
+  .activity-description {
+    font-size: 0.9rem;
+  }
+
+  .confirmation-toast {
+    margin: 0 1rem;
+    padding: 1rem;
+  }
+
+  .toast-content {
+    gap: 0.75rem;
+  }
+
+  .toast-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .toast-message {
+    font-size: 0.9rem;
+  }
+
+  .toast-close {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
   }
 
   .sidebar-card {
@@ -816,20 +930,28 @@ const handleFormSuccess = (message: string) => {
 
   .action-btn {
     padding: 0.625rem;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
   }
 
   .btn-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 
   .activity-card {
-    padding: 0.75rem;
+    padding: 1rem;
   }
 
   .activity-image {
-    height: 120px;
+    height: 160px;
+  }
+
+  .activity-title {
+    font-size: 1rem;
+  }
+
+  .activity-description {
+    font-size: 0.85rem;
   }
 }
 </style>
