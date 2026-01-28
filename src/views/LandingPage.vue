@@ -344,11 +344,14 @@ const goToAssociation = (id: string) => {
 .landing-page {
   min-height: 100vh;
   background: var(--hgf-gray-bg);
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Hero Section with Light Background (RED only for title) */
 .hero-section {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   color: var(--hgf-gray-dark);
   padding: 4rem 2rem 6rem;
   text-align: center;
@@ -734,6 +737,9 @@ const goToAssociation = (id: string) => {
   color: white;
   padding: 3rem 2rem 1rem;
   margin-top: 4rem;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .footer-content {
@@ -743,6 +749,8 @@ const goToAssociation = (id: string) => {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-section {
@@ -857,9 +865,14 @@ const goToAssociation = (id: string) => {
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .footer-container {
+    padding: 2rem 1.5rem 1rem;
+  }
+  
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    max-width: 100%;
   }
   
   .navbar-content {
@@ -877,6 +890,19 @@ const goToAssociation = (id: string) => {
 }
 
 @media (max-width: 768px) {
+  /* Footer */
+  .footer-container {
+    padding: 2rem 1rem 1rem;
+    width: 100%;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 100%;
+    width: 100%;
+  }
+  
   /* Navbar */
   .navbar-content {
     padding: 0.75rem 1rem;
