@@ -429,9 +429,11 @@ const handleFormSuccess = (message: string) => {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 1.25rem;
+  padding: 1rem;
+  background: white;
+  color: var(--hgf-gray-dark);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
