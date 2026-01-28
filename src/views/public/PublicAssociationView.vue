@@ -303,10 +303,16 @@ const handleFormSuccess = (message: string) => {
 .hero-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    padding: 0 2rem;
+  }
 }
 
 .hero-back-button {
@@ -333,13 +339,21 @@ const handleFormSuccess = (message: string) => {
 
 .hero-content {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: flex-start;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
 
 .hero-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: var(--hgf-blue);
   border-radius: 12px;
   display: flex;
@@ -349,29 +363,55 @@ const handleFormSuccess = (message: string) => {
   color: white;
 }
 
+@media (min-width: 768px) {
+  .hero-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 .hero-text {
   flex: 1;
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
 }
 
 .hero-location {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   margin-bottom: 1rem;
   opacity: 0.95;
 }
 
+@media (min-width: 768px) {
+  .hero-location {
+    font-size: 1.1rem;
+  }
+}
+
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   opacity: 0.95;
+}
+
+@media (min-width: 768px) {
+  .hero-description {
+    font-size: 1.1rem;
+  }
 }
 
 /* Main Content */
@@ -419,15 +459,27 @@ const handleFormSuccess = (message: string) => {
 .sidebar-card {
   background: var(--hgf-blue);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+@media (min-width: 768px) {
+  .sidebar-card {
+    padding: 2rem;
+  }
+}
+
 .sidebar-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: white;
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar-title {
+    font-size: 1.5rem;
+  }
 }
 
 .action-buttons {
@@ -520,16 +572,29 @@ const handleFormSuccess = (message: string) => {
 }
 
 .feed-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--hgf-gray-dark);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .feed-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .activity-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .activity-list {
+    gap: 2rem;
+  }
 }
 
 .activity-card {
@@ -547,8 +612,14 @@ const handleFormSuccess = (message: string) => {
 
 .activity-image {
   position: relative;
-  height: 300px;
+  height: 200px;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .activity-image {
+    height: 300px;
+  }
 }
 
 .activity-image img {
@@ -585,7 +656,13 @@ const handleFormSuccess = (message: string) => {
 }
 
 .activity-content {
-  padding: 2rem;
+  padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .activity-content {
+    padding: 2rem;
+  }
 }
 
 .activity-meta {
@@ -593,8 +670,15 @@ const handleFormSuccess = (message: string) => {
   align-items: center;
   gap: 0.5rem;
   color: var(--hgf-gray-medium);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .activity-meta {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .meta-icon {
@@ -603,18 +687,33 @@ const handleFormSuccess = (message: string) => {
 }
 
 .activity-title {
-  font-size: 1.75rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--hgf-gray-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.3;
 }
 
+@media (min-width: 768px) {
+  .activity-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+}
+
 .activity-description {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   color: var(--hgf-gray-medium);
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .activity-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .activity-footer {
