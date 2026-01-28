@@ -458,22 +458,6 @@ const handleFormSuccess = (message: string) => {
   color: white;
 }
 
-/* Big Screen Sidebar Alignment */
-@media (min-width: 769px) {
-  .sidebar-title {
-    text-align: left;
-  }
-  
-  .action-buttons {
-    align-items: flex-start;
-  }
-  
-  .action-btn {
-    text-align: left;
-    justify-content: flex-start;
-  }
-}
-
 .btn-icon {
   width: 20px;
   height: 20px;

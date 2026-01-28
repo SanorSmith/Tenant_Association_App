@@ -3,16 +3,28 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- Full Width Brand Header -->
+        <!-- Split Layout - 4 Parts -->
         <div class="navbar-left">
-          <!-- Mobile Menu Toggle -->
-          <button @click="toggleMobileMenu" class="mobile-menu-toggle">
-            <Menu class="w-6 h-6" />
-          </button>
-          <router-link to="/" class="brand-header">
-            <Building2 :size="48" class="brand-icon" />
-            <h1 class="brand-title">Grannskapet</h1>
-          </router-link>
+          <!-- Part 1: Mobile Menu Toggle -->
+          <div class="navbar-part">
+            <button @click="toggleMobileMenu" class="mobile-menu-toggle">
+              <Menu class="w-6 h-6" />
+            </button>
+          </div>
+          
+          <!-- Part 2: Empty Space -->
+          <div class="navbar-part"></div>
+          
+          <!-- Part 3: Brand Header (aligned to sidebar) -->
+          <div class="navbar-part">
+            <router-link to="/" class="brand-header">
+              <Building2 :size="48" class="brand-icon" />
+              <h1 class="brand-title">Grannskapet</h1>
+            </router-link>
+          </div>
+          
+          <!-- Part 4: Empty Space -->
+          <div class="navbar-part"></div>
         </div>
         
         <!-- Mobile Menu -->
@@ -231,18 +243,40 @@ const showBoardLogin = computed(() => {
 }
 
 .navbar-left {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.navbar-part {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  position: relative;
+}
+
+.navbar-part:first-child {
+  justify-content: flex-start;
+}
+
+.navbar-part:nth-child(3) {
+  justify-content: flex-end;
+  padding-right: 2rem;
 }
 
 .mobile-menu-toggle {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--hgf-blue);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.mobile-menu-toggle svg {
+  width: 32px;
+  height: 28px;
+  stroke-width: 3;
 }
 
 .brand-header {
