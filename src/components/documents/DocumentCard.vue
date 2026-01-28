@@ -1,7 +1,7 @@
 <template>
   <BaseCard class="document-card">
     <div class="document-icon">
-      <FileText class="w-8 h-8 text-primary" />
+      <FileText class="w-8 h-8" style="color: var(--hgf-blue);" />
     </div>
     
     <div class="document-info">
