@@ -133,6 +133,12 @@ h1, h2.page-title, .title-red {
   color: var(--hgf-red) !important;
 }
 
+/* h1 elements with text-primary class should also be red */
+h1.text-primary,
+.text-primary h1 {
+  color: var(--hgf-red) !important;
+}
+
 /* Dashboard h1 specifically should be red */
 .dashboard-view h1,
 .dashboard-view .dashboard-header h1 {
