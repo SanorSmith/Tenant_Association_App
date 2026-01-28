@@ -304,8 +304,8 @@ const handleFormSuccess = (message: string) => {
 
 /* Hero Banner */
 .association-hero {
-  background: linear-gradient(135deg, var(--hgf-blue) 0%, var(--hgf-blue-dark) 100%);
-  color: white;
+  background: var(--hgf-gray-bg);
+  color: var(--hgf-gray-dark);
   padding: 3rem 0;
 }
 
@@ -324,8 +324,8 @@ const handleFormSuccess = (message: string) => {
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   background: transparent;
-  color: white;
-  border: 2px solid white;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
@@ -335,6 +335,8 @@ const handleFormSuccess = (message: string) => {
 }
 
 .hero-back-button:hover {
+  background: var(--hgf-blue);
+  color: white;
   transform: translateY(-1px);
 }
 
@@ -347,12 +349,13 @@ const handleFormSuccess = (message: string) => {
 .hero-icon {
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--hgf-blue);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  color: white;
 }
 
 .hero-text {
