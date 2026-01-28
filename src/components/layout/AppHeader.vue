@@ -1,7 +1,8 @@
 <template>
-  <header class="app-header">
-    <div class="header-container">
-      <div class="header-left">
+  <nav class="navbar">
+    <div class="navbar-content">
+      <!-- Left side - Brand Header -->
+      <div class="navbar-left">
         <button
           class="mobile-menu-toggle md:hidden"
           @click="$emit('toggle-sidebar')"
@@ -9,13 +10,14 @@
         >
           <Menu class="w-6 h-6" />
         </button>
-        <router-link to="/" class="logo">
-          <h1 class="text-2xl font-bold text-primary">Grannskapet</h1>
-        </router-link>
+        <div class="brand-header">
+          <Building2 :size="48" class="brand-icon" />
+          <h1 class="brand-title">Grannskapet</h1>
+        </div>
       </div>
       
-            
-      <div class="header-right">
+      <!-- Right side - Navigation Links -->
+      <div class="navbar-right">
         <div class="notification-wrapper">
           <IconButton
             :icon="Bell"
@@ -60,7 +62,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
-import { Menu, Bell, User, ChevronDown, Settings, LogOut } from 'lucide-vue-next';
+import { Menu, Bell, User, ChevronDown, Settings, LogOut, Building2 } from 'lucide-vue-next';
 import IconButton from '../ui/IconButton.vue';
 import { useMockDataStore } from '../../stores/mockData';
 
@@ -83,44 +85,52 @@ const handleLogout = () => {
 </script>
 
 <style scoped>
-.app-header {
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
+/* Navbar Styles - Same as LandingPage */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
   top: 0;
-  z-index: var(--z-sticky);
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
-.header-container {
+.navbar-content {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 0.75rem;
-  height: 3.5rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
 }
 
-@media (min-width: 768px) {
-  .header-container {
-    padding: 0 1rem;
-    height: 4rem;
-    gap: 1rem;
-  }
-}
-
-.header-left {
+.navbar-left {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  flex: 1;
-  min-width: 0;
 }
 
-@media (min-width: 768px) {
-  .header-left {
-    gap: 1rem;
-  }
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-icon {
+  color: var(--hgf-blue);
+}
+
+.brand-title {
+  color: var(--hgf-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .mobile-menu-toggle {
@@ -128,51 +138,30 @@ const handleLogout = () => {
   border: none;
   background: transparent;
   cursor: pointer;
-  color: var(--color-text-secondary);
+  color: var(--hgf-blue);
   transition: color var(--transition-fast);
 }
 
 .mobile-menu-toggle:hover {
-  color: var(--color-text-primary);
+  color: var(--hgf-blue-dark);
 }
 
-.logo {
-  text-decoration: none;
-  flex: 1;
-  min-width: 0;
+.notification-wrapper {
+  position: relative;
 }
 
-.logo h1 {
-  font-size: 1.25rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@media (min-width: 768px) {
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .logo h1 {
-    font-size: 2rem;
-  }
-}
-
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  flex-shrink: 0;
-}
-
-@media (min-width: 768px) {
-  .header-right {
-    gap: 0.5rem;
-  }
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--hgf-red);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: 9999px;
+  min-width: 1.25rem;
+  text-align: center;
 }
 
 .user-menu {
@@ -186,9 +175,9 @@ const handleLogout = () => {
   border: none;
   background: transparent;
   cursor: pointer;
-  color: var(--color-text-primary);
-  border-radius: var(--radius-md);
-  transition: background var(--transition-fast);
+  color: var(--hgf-gray-dark);
+  border-radius: 8px;
+  transition: background 0.2s ease;
 }
 
 @media (min-width: 768px) {
@@ -198,7 +187,7 @@ const handleLogout = () => {
 }
 
 .user-button:hover {
-  background: var(--color-background-secondary);
+  background: var(--hgf-gray-bg);
 }
 
 .user-dropdown {
@@ -206,12 +195,12 @@ const handleLogout = () => {
   top: calc(100% + 0.5rem);
   right: 0;
   min-width: 200px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  background: white;
+  border: 1px solid var(--hgf-gray-light);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   padding: 0.5rem;
-  z-index: var(--z-dropdown);
+  z-index: 1000;
 }
 
 .dropdown-item {
@@ -223,38 +212,34 @@ const handleLogout = () => {
   border: none;
   background: transparent;
   cursor: pointer;
-  color: var(--color-text-primary);
+  color: var(--hgf-gray-dark);
   text-decoration: none;
-  border-radius: var(--radius-sm);
-  transition: background var(--transition-fast);
+  border-radius: 4px;
+  transition: background 0.2s ease;
   font-size: 0.875rem;
 }
 
 .dropdown-item:hover {
-  background: var(--color-background-secondary);
+  background: var(--hgf-gray-bg);
 }
 
 .dropdown-divider {
   height: 1px;
-  background: var(--color-border);
+  background: var(--hgf-gray-light);
   margin: 0.5rem 0;
 }
 
-.notification-wrapper {
-  position: relative;
-}
-
-.notification-badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background: var(--color-error);
-  color: white;
-  font-size: 0.75rem;
-  font-weight: var(--font-weight-semibold);
-  padding: 0.125rem 0.375rem;
-  border-radius: var(--radius-full);
-  min-width: 1.25rem;
-  text-align: center;
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 </style>
