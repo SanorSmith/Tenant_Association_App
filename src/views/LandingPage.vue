@@ -207,10 +207,10 @@ const goToAssociation = (id: string) => {
   background: var(--hgf-gray-bg);
 }
 
-/* Hero Section with RED Gradient (HGF Logo Color) */
+/* Hero Section with Light Background (RED only for title) */
 .hero-section {
-  background: linear-gradient(135deg, var(--hgf-red) 0%, var(--hgf-red-dark) 100%);
-  color: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: var(--hgf-gray-dark);
   padding: 4rem 2rem 6rem;
   text-align: center;
 }
@@ -229,27 +229,27 @@ const goToAssociation = (id: string) => {
 }
 
 .brand-icon {
-  color: white;
+  color: var(--hgf-blue);
 }
 
 .brand-title {
   font-size: 3rem;
   font-weight: 700;
   margin: 0;
-  color: white;
+  color: var(--hgf-red);
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
-  color: white;
+  color: var(--hgf-red);
 }
 
 .hero-description {
   font-size: 1.125rem;
   margin: 0 0 2.5rem 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--hgf-gray-medium);
   line-height: 1.6;
 }
 
@@ -300,7 +300,7 @@ const goToAssociation = (id: string) => {
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: var(--hgf-red);
+  background: var(--hgf-blue);
   color: white;
   border: none;
   border-radius: 8px;
@@ -308,14 +308,14 @@ const goToAssociation = (id: string) => {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(227, 6, 19, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.3);
   white-space: nowrap;
 }
 
 .search-button:hover:not(:disabled) {
-  background: var(--hgf-red-dark);
+  background: var(--hgf-blue-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(227, 6, 19, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 102, 179, 0.4);
 }
 
 .search-button:disabled {
@@ -329,9 +329,9 @@ const goToAssociation = (id: string) => {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: 2px solid white;
+  background: transparent;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
   border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 500;
@@ -340,7 +340,8 @@ const goToAssociation = (id: string) => {
 }
 
 .location-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--hgf-blue);
+  color: white;
   transform: translateY(-2px);
 }
 

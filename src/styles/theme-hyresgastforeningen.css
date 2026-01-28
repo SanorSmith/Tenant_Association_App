@@ -61,26 +61,36 @@
    GLOBAL BUTTON OVERRIDES
    ======================================== */
 
-/* Primary buttons - RED for CTAs (HGF logo color) */
+/* All buttons use BLUE - RED is only for titles/hovers */
 button.bg-primary,
 .bg-primary,
-[class*="bg-primary"] {
-  background-color: var(--hgf-red) !important;
+[class*="bg-primary"],
+button[type="submit"],
+.btn-primary {
+  background-color: var(--hgf-blue) !important;
+  color: white !important;
 }
 
 button.bg-primary:hover,
 .bg-primary:hover,
-button.hover\:bg-primary-dark:hover {
-  background-color: var(--hgf-red-dark) !important;
+button.hover\:bg-primary-dark:hover,
+button[type="submit"]:hover,
+.btn-primary:hover {
+  background-color: var(--hgf-blue-dark) !important;
 }
 
-/* Text colors */
+/* Text colors - RED only for headings */
 .text-primary {
-  color: var(--hgf-red) !important;
+  color: var(--hgf-blue) !important;
 }
 
 .text-secondary {
-  color: var(--hgf-blue) !important;
+  color: var(--hgf-gray-medium) !important;
+}
+
+/* Headings use RED for emphasis */
+h1, h2.page-title, .title-red {
+  color: var(--hgf-red) !important;
 }
 
 /* Border colors */
@@ -133,12 +143,13 @@ input[type="radio"]:checked {
 /* ========================================
    LINKS
    ======================================== */
-a:not(.no-style) {
+a:not(.no-style):not(.btn):not(.button) {
   color: var(--hgf-blue);
+  transition: color 0.2s ease;
 }
 
-a:not(.no-style):hover {
-  color: var(--hgf-blue-dark);
+a:not(.no-style):not(.btn):not(.button):hover {
+  color: var(--hgf-red);
 }
 
 /* ========================================
