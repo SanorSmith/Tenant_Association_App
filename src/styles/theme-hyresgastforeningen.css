@@ -64,11 +64,17 @@
 /* All buttons use BLUE - RED is only for titles/hovers */
 button.bg-primary,
 .bg-primary,
-[class*="bg-primary"],
+[class*="bg-primary"]:not([class*="bg-transparent"]),
 button[type="submit"],
 .btn-primary {
   background-color: var(--hgf-blue) !important;
   color: white !important;
+}
+
+/* Outline buttons - transparent background, blue border/text */
+button.bg-transparent,
+.bg-transparent {
+  background-color: transparent !important;
 }
 
 button.bg-primary:hover,
@@ -77,6 +83,13 @@ button.hover\:bg-primary-dark:hover,
 button[type="submit"]:hover,
 .btn-primary:hover {
   background-color: var(--hgf-blue-dark) !important;
+}
+
+/* Outline button hover - blue background, white text */
+button.bg-transparent:hover,
+.bg-transparent:hover {
+  background-color: var(--hgf-blue) !important;
+  color: white !important;
 }
 
 /* Text colors - RED only for headings */
