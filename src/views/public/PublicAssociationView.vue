@@ -6,10 +6,6 @@
     <!-- Association Hero Banner -->
     <section v-if="association" class="association-hero">
       <div class="hero-container">
-        <button @click="goBack" class="hero-back-button">
-          <ArrowLeft class="w-5 h-5" />
-          Tillbaka till sökning
-        </button>
         <div class="hero-content">
           <div class="hero-icon">
             <Building2 class="w-12 h-12" />
@@ -23,6 +19,10 @@
             <p class="hero-description">{{ association.description }}</p>
           </div>
         </div>
+        <button @click="goBack" class="hero-back-button">
+          <ArrowLeft class="w-5 h-5" />
+          Tillbaka till sökning
+        </button>
       </div>
     </section>
 
@@ -313,6 +313,9 @@ const handleFormSuccess = (message: string) => {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .hero-back-button {
@@ -328,7 +331,7 @@ const handleFormSuccess = (message: string) => {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .hero-back-button:hover {
