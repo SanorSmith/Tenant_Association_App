@@ -3,37 +3,24 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="navbar-content">
-        <!-- 2-Part Layout - Aligned to Sidebar -->
+        <!-- Left side - Brand Header -->
         <div class="navbar-left">
-          <!-- Part 1: Sidebar Column (320px) - Brand Header -->
-          <div class="navbar-part">
-            <button @click="toggleMobileMenu" class="mobile-menu-toggle">
-              <Menu class="w-6 h-6" />
-            </button>
-            <router-link to="/" class="brand-header">
-              <Building2 :size="48" class="brand-icon" />
-              <h1 class="brand-title">Grannskapet</h1>
-            </router-link>
-          </div>
-          
-          <!-- Part 2: Main Content Column -->
-          <div class="navbar-part"></div>
+          <router-link to="/" class="brand-header">
+            <Building2 :size="48" class="brand-icon" />
+            <h1 class="brand-title">Grannskapet</h1>
+          </router-link>
         </div>
         
-        <!-- Mobile Menu -->
-        <div v-if="showMobileMenu" class="mobile-menu">
-          <router-link v-if="!showBoardLogin" to="/" class="mobile-nav-link" @click="closeMobileMenu">
-            <Home class="w-5 h-5" />
-            Hem
-          </router-link>
-          <router-link v-if="showBoardLogin" to="/login" class="mobile-nav-link" @click="closeMobileMenu">
-            <Lock class="w-5 h-5" />
-            Styrelsemedlem? Logga in
-          </router-link>
-          <button v-if="showBackButton" @click="handleMobileBack" class="mobile-nav-link">
-            <ArrowLeft class="w-5 h-5" />
-            Tillbaka till sökning
-          </button>
+        <!-- Right side - Navigation Links -->
+        <div class="navbar-right">
+          <router-link to="/" class="nav-link">Hem</router-link>
+          <div v-if="showBoardLogin" class="board-login-nav">
+            <p class="login-text">Styrelsemedlem?</p>
+            <router-link to="/login" class="login-button">
+              <Lock class="w-4 h-4" />
+              Logga in
+            </router-link>
+          </div>
         </div>
       </div>
     </nav>
@@ -158,8 +145,6 @@ import {
   Building2,
   ArrowLeft,
   Lock,
-  Menu,
-  Home,
   Link,
   Info,
   Mail,
@@ -175,26 +160,11 @@ import {
   TrendingUp,
   Building
 } from 'lucide-vue-next';
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
 const route = useRoute();
-
-const showMobileMenu = ref(false);
-
-const toggleMobileMenu = () => {
-  showMobileMenu.value = !showMobileMenu.value;
-};
-
-const closeMobileMenu = () => {
-  showMobileMenu.value = false;
-};
-
-const handleMobileBack = () => {
-  router.go(-1);
-  closeMobileMenu();
-};
 
 const goBack = () => {
   router.go(-1);
@@ -233,63 +203,12 @@ const showBoardLogin = computed(() => {
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navbar-left {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  align-items: center;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.navbar-part {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.navbar-part:first-child {
-  justify-content: flex-start;
-}
-
-.mobile-menu-toggle {
-  background: none;
-  border: none;
-  color: var(--hgf-blue);
-  cursor: pointer;
-  padding: 0.25rem;
-  margin-left: -0.5rem;
-}
-
-.mobile-menu-toggle svg {
-  width: 32px;
-  height: 28px;
-  stroke-width: 3;
-}
-
-/* Mobile only - Blue rounded border for hamburger */
-@media (max-width: 768px) {
-  .mobile-menu-toggle {
-    border: 2px solid var(--hgf-blue);
-    border-radius: 8px;
-    padding: 0.5rem;
-  }
-  
-  .navbar-left {
-    position: relative;
-  }
-  
-  .navbar-part:first-child {
-    position: absolute;
-    left: 0;
-  }
-  
-  .brand-header {
-    margin: 0 auto;
-  }
 }
 
 .brand-header {
@@ -299,22 +218,6 @@ const showBoardLogin = computed(() => {
   text-decoration: none;
   color: inherit;
   outline: none;
-}
-
-/* Big screens - Double brand size */
-@media (min-width: 1024px) {
-  .brand-header {
-    gap: 2rem;
-  }
-  
-  .brand-header .brand-icon {
-    width: 96px !important;
-    height: 96px !important;
-  }
-  
-  .brand-header .brand-title {
-    font-size: 3rem !important;
-  }
 }
 
 .brand-header:focus {
@@ -407,68 +310,6 @@ const showBoardLogin = computed(() => {
   background: var(--hgf-blue);
   color: white;
   transform: translateY(-1px);
-}
-
-/* Mobile Menu Styles */
-.mobile-menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--hgf-blue);
-  cursor: pointer;
-  padding: 0.25rem;
-}
-
-.mobile-menu-toggle svg {
-  width: 32px;
-  height: 28px;
-  stroke-width: 3;
-}
-
-.mobile-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid var(--hgf-gray-light);
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  z-index: 1000;
-}
-
-.mobile-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  color: var(--hgf-gray-dark);
-  text-decoration: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.mobile-nav-link:hover {
-  background: var(--hgf-gray-bg);
-  color: var(--hgf-blue);
-}
-
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-  
-  .mobile-menu-toggle {
-    display: block;
-  }
-  
-  .mobile-menu {
-    display: block;
-  }
 }
 
 /* Main Content */

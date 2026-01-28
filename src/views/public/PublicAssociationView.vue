@@ -19,6 +19,10 @@
             <p class="hero-description">{{ association.description }}</p>
           </div>
         </div>
+        <button @click="goBack" class="hero-back-button">
+          <ArrowLeft class="w-5 h-5" />
+          Tillbaka till sökning
+        </button>
       </div>
     </section>
 
@@ -151,9 +155,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Footer -->
-    <AppFooter />
   </div>
   </AppLayout>
 </template>
@@ -165,6 +166,7 @@ import { useMockDataStore } from '@/stores/mockData';
 import { format } from 'date-fns';
 import { sv } from 'date-fns/locale';
 import {
+  ArrowLeft,
   Building2,
   MapPin,
   FileText,
@@ -180,7 +182,6 @@ import CreateAssociationFormModal from '@/components/forms/CreateAssociationForm
 import MembershipFormModal from '@/components/forms/MembershipFormModal.vue';
 import PremisesBookingModal from '@/components/forms/PremisesBookingModal.vue';
 import AppLayout from '../../components/layout/AppLayout.vue';
-import AppFooter from '@/components/layout/AppFooter.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -197,6 +198,10 @@ const showCreateAssociationForm = ref(false);
 const showMembershipForm = ref(false);
 const showBookingForm = ref(false);
 const confirmationMessage = ref('');
+
+const goBack = () => {
+  router.go(-1);
+};
 
 const publicActivities = computed(() =>
   association.value 
@@ -303,16 +308,10 @@ const handleFormSuccess = (message: string) => {
 .hero-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-}
-
-@media (min-width: 768px) {
-  .hero-container {
-    padding: 0 2rem;
-  }
 }
 
 .hero-back-button {
@@ -339,21 +338,13 @@ const handleFormSuccess = (message: string) => {
 
 .hero-content {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: flex-start;
-  flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  .hero-content {
-    flex-direction: row;
-    gap: 2rem;
-  }
 }
 
 .hero-icon {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: var(--hgf-blue);
   border-radius: 12px;
   display: flex;
@@ -363,88 +354,43 @@ const handleFormSuccess = (message: string) => {
   color: white;
 }
 
-@media (min-width: 768px) {
-  .hero-icon {
-    width: 80px;
-    height: 80px;
-  }
-}
-
 .hero-text {
   flex: 1;
 }
 
 .hero-title {
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
 }
 
 .hero-location {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
   opacity: 0.95;
 }
 
-@media (min-width: 768px) {
-  .hero-location {
-    font-size: 1.1rem;
-  }
-}
-
 .hero-description {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   opacity: 0.95;
 }
 
-@media (min-width: 768px) {
-  .hero-description {
-    font-size: 1.1rem;
-  }
-}
-
 /* Main Content */
 .main-content {
-  padding: 2rem 1rem;
-}
-
-@media (min-width: 768px) {
-  .main-content {
-    padding: 3rem 2rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .main-content {
-    padding: 4rem 3rem;
-  }
+  padding: 3rem 0;
 }
 
 .content-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 2rem;
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 3rem;
-}
-
-@media (max-width: 768px) {
-  .content-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
 }
 
 /* Sidebar */
@@ -459,27 +405,15 @@ const handleFormSuccess = (message: string) => {
 .sidebar-card {
   background: var(--hgf-blue);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-@media (min-width: 768px) {
-  .sidebar-card {
-    padding: 2rem;
-  }
-}
-
 .sidebar-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: white;
   margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .sidebar-title {
-    font-size: 1.5rem;
-  }
 }
 
 .action-buttons {
@@ -572,29 +506,16 @@ const handleFormSuccess = (message: string) => {
 }
 
 .feed-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--hgf-gray-dark);
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .feed-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
+  margin-bottom: 2rem;
 }
 
 .activity-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .activity-list {
-    gap: 2rem;
-  }
+  gap: 2rem;
 }
 
 .activity-card {
@@ -612,14 +533,8 @@ const handleFormSuccess = (message: string) => {
 
 .activity-image {
   position: relative;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .activity-image {
-    height: 300px;
-  }
 }
 
 .activity-image img {
@@ -656,13 +571,7 @@ const handleFormSuccess = (message: string) => {
 }
 
 .activity-content {
-  padding: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .activity-content {
-    padding: 2rem;
-  }
+  padding: 2rem;
 }
 
 .activity-meta {
@@ -670,15 +579,8 @@ const handleFormSuccess = (message: string) => {
   align-items: center;
   gap: 0.5rem;
   color: var(--hgf-gray-medium);
-  font-size: 0.85rem;
-  margin-bottom: 0.75rem;
-}
-
-@media (min-width: 768px) {
-  .activity-meta {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-  }
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .meta-icon {
@@ -687,33 +589,18 @@ const handleFormSuccess = (message: string) => {
 }
 
 .activity-title {
-  font-size: 1.35rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--hgf-gray-dark);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   line-height: 1.3;
 }
 
-@media (min-width: 768px) {
-  .activity-title {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-}
-
 .activity-description {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--hgf-gray-medium);
-  line-height: 1.6;
-  margin-bottom: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .activity-description {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 .activity-footer {
