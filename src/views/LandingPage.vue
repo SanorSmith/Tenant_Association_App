@@ -1,13 +1,31 @@
 <template>
   <div class="landing-page">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="navbar-content">
+        <!-- Left side - can be empty or have menu items -->
+        <div class="navbar-left">
+          <!-- Future menu items can go here -->
+        </div>
+        
+        <!-- Right side - Brand and Login -->
+        <div class="navbar-right">
+          <div class="brand-header">
+            <Building2 :size="48" class="brand-icon" />
+            <h1 class="brand-title">Grannskapet</h1>
+          </div>
+          
+          <router-link to="/login" class="login-link">
+            <Lock :size="16" />
+            Logga in här
+          </router-link>
+        </div>
+      </div>
+    </nav>
+    
     <!-- Hero Section with Blue Gradient -->
     <section class="hero-section">
       <div class="hero-content">
-        <div class="brand-header">
-          <Building2 :size="48" class="brand-icon" />
-          <h1 class="brand-title">Grannskapet</h1>
-        </div>
-        
         <p class="hero-subtitle">
           Hitta din lokala hyresgästförening
         </p>
@@ -233,7 +251,8 @@ import {
   Navigation, 
   Users, 
   ArrowRight, 
-  AlertCircle,
+  AlertCircle, 
+  Lock,
   Link,
   Info,
   Mail,
@@ -329,11 +348,79 @@ const goToAssociation = (id: string) => {
   background: var(--hgf-gray-bg);
 }
 
+/* Navigation Bar */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left {
+  flex: 1;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-right .brand-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-right .brand-icon {
+  color: var(--hgf-blue);
+}
+
+.navbar-right .brand-title {
+  color: var(--hgf-red);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.navbar-right .login-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: var(--hgf-blue);
+  border: 2px solid var(--hgf-blue);
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.navbar-right .login-link:hover {
+  background: var(--hgf-blue);
+  color: white;
+  transform: translateY(-1px);
+}
+
 /* Hero Section with Light Background (RED only for title) */
 .hero-section {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   color: var(--hgf-gray-dark);
-  padding: 4rem 2rem 6rem;
+  padding: 6rem 2rem 6rem;
   text-align: center;
 }
 
