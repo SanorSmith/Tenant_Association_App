@@ -238,33 +238,6 @@ const showBoardLogin = computed(() => {
   position: relative;
 }
 
-/* Big screens - brand on left, double size */
-@media (min-width: 1024px) {
-  .navbar {
-    height: 120px; /* Increased height for double-sized logo */
-  }
-  
-  .navbar-content {
-    padding: 1rem 2rem;
-  }
-  
-  .navbar-left {
-    justify-content: flex-start;
-  }
-  
-  .brand-header {
-    transform: scale(2);
-  }
-  
-  .mobile-menu-toggle {
-    display: none !important;
-  }
-  
-  .main-content {
-    margin-top: 120px; /* Account for taller navbar on big screens */
-  }
-}
-
 .mobile-menu-toggle {
   position: absolute;
   left: 0;
@@ -281,20 +254,38 @@ const showBoardLogin = computed(() => {
   outline: none;
 }
 
-.brand-header:focus {
-  outline: none;
-  box-shadow: none;
-}
-
 .brand-icon {
+  width: 48px;
+  height: 48px;
   color: var(--hgf-blue);
 }
 
 .brand-title {
-  color: var(--hgf-red);
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(--hgf-red);
   margin: 0;
+}
+
+/* Big screen styles */
+@media (min-width: 769px) {
+  .navbar-left {
+    justify-content: flex-start;
+  }
+  
+  .brand-icon {
+    width: 96px;
+    height: 96px;
+  }
+  
+  .brand-title {
+    font-size: 3rem;
+  }
+}
+
+.brand-header:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .navbar-right {
