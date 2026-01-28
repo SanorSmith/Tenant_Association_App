@@ -13,7 +13,7 @@
           </BaseButton>
           <BaseButton
             v-if="document && document.status === 'draft'"
-            variant="primary"
+            variant="outline"
             @click="editDocument"
           >
             <Edit class="w-4 h-4" />

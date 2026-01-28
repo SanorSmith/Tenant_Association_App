@@ -7,7 +7,7 @@
           <p class="text-text-secondary mt-2">Välkommen tillbaka, {{ currentUser.fullName }}!</p>
         </div>
         <div v-if="currentUser.role === 'administrator'" class="quick-actions">
-          <BaseButton variant="primary" size="sm">
+          <BaseButton variant="outline" size="sm">
             <Calendar class="w-4 h-4" />
             Skapa möte
           </BaseButton>

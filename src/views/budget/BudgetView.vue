@@ -3,7 +3,7 @@
     <div class="budget-view">
       <div class="budget-header">
         <h1 class="text-3xl font-bold text-text-primary">Budget 2025</h1>
-        <BaseButton variant="primary" @click="showCreateModal = true">
+        <BaseButton variant="outline" @click="showCreateModal = true">
           <Plus class="w-4 h-4" />
           Ny budgetpost
         </BaseButton>

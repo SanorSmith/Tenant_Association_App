@@ -3,7 +3,7 @@
     <div class="documents-view">
       <div class="documents-header">
         <h1 class="text-3xl font-bold text-text-primary">Dokument</h1>
-        <BaseButton variant="primary" @click="handleCreateDocument">
+        <BaseButton variant="outline" @click="handleCreateDocument">
           <FileText class="w-4 h-4" />
           Skapa dokument
         </BaseButton>

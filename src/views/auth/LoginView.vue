@@ -40,7 +40,7 @@
           
           <BaseButton
             type="submit"
-            variant="primary"
+            variant="outline"
             size="lg"
             :loading="loading"
             class="w-full"

@@ -44,7 +44,7 @@
             </div>
             
             <div v-if="currentUser.role === 'administrator'" class="form-actions">
-              <BaseButton type="submit" variant="primary" :loading="loading">
+              <BaseButton type="submit" variant="outline" :loading="loading">
                 Spara ändringar
               </BaseButton>
               <BaseButton type="button" variant="outline" @click="resetForm">
@@ -59,7 +59,7 @@
             <p class="text-text-secondary">Hantera styrelsemedlemmar och deras roller</p>
             <BaseButton
               v-if="currentUser.role === 'administrator'"
-              variant="primary"
+              variant="outline"
               size="sm"
               @click="showAddMemberModal = true"
             >

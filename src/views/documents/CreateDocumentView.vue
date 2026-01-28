@@ -123,7 +123,7 @@
           <div class="nav-spacer"></div>
           <BaseButton
             v-if="currentStep < template.sections.length - 1"
-            variant="primary"
+            variant="outline"
             :disabled="!isSectionValid"
             @click="nextStep"
           >
@@ -132,7 +132,7 @@
           </BaseButton>
           <BaseButton
             v-else
-            variant="primary"
+            variant="outline"
             :disabled="!isDocumentValid"
             @click="finalizeDocument"
           >

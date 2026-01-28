@@ -75,7 +75,7 @@
             </div>
             
             <div class="form-actions">
-              <BaseButton type="submit" variant="primary" :loading="loading">
+              <BaseButton type="submit" variant="outline" :loading="loading">
                 Spara ändringar
               </BaseButton>
               <BaseButton type="button" variant="outline" @click="resetForm">
@@ -119,7 +119,7 @@
               required
             />
             
-            <BaseButton type="submit" variant="primary" :loading="passwordLoading">
+            <BaseButton type="submit" variant="outline" :loading="passwordLoading">
               Ändra lösenord
             </BaseButton>
           </form>

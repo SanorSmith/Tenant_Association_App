@@ -3,7 +3,7 @@
     <div class="meetings-view">
       <div class="meetings-header">
         <h1 class="text-3xl font-bold text-text-primary">Möten</h1>
-        <BaseButton variant="primary" @click="showCreateMeetingModal = true">
+        <BaseButton variant="outline" @click="showCreateMeetingModal = true">
           <Calendar class="w-4 h-4" />
           Skapa möte
         </BaseButton>

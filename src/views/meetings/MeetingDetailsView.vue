@@ -9,7 +9,7 @@
         <div class="header-actions">
           <BaseButton
             v-if="meeting && meeting.status === 'scheduled'"
-            variant="primary"
+            variant="outline"
             @click="createAgenda"
           >
             <FileText class="w-4 h-4" />

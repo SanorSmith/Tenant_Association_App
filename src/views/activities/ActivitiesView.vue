@@ -3,7 +3,7 @@
     <div class="activities-view">
       <div class="activities-header">
         <h1 class="text-3xl font-bold text-text-primary">Aktiviteter</h1>
-        <BaseButton variant="primary" @click="showCreateModal = true">
+        <BaseButton variant="outline" @click="showCreateModal = true">
           <Plus class="w-4 h-4" />
           Ny aktivitet
         </BaseButton>
