@@ -1,14 +1,15 @@
 <template>
-  <div class="public-page">
-    <!-- Header with Back Button -->
-    <header class="page-header">
-      <div class="header-container">
-        <button @click="goBack" class="back-button">
-          <ArrowLeft class="w-5 h-5" />
-          Tillbaka till sökning
-        </button>
-      </div>
-    </header>
+  <AppLayout>
+    <div class="public-page">
+      <!-- Header with Back Button -->
+      <header class="page-header">
+        <div class="header-container">
+          <button @click="goBack" class="back-button">
+            <ArrowLeft class="w-5 h-5" />
+            Tillbaka till sökning
+          </button>
+        </div>
+      </header>
 
     <!-- Association Hero Banner -->
     <section v-if="association" class="association-hero">
@@ -170,6 +171,7 @@
     <!-- Footer -->
     <AppFooter />
   </div>
+  </AppLayout>
 </template>
 
 <script setup lang="ts">
@@ -195,6 +197,7 @@ import ProposalFormModal from '@/components/forms/ProposalFormModal.vue';
 import CreateAssociationFormModal from '@/components/forms/CreateAssociationFormModal.vue';
 import MembershipFormModal from '@/components/forms/MembershipFormModal.vue';
 import PremisesBookingModal from '@/components/forms/PremisesBookingModal.vue';
+import AppLayout from '../../components/layout/AppLayout.vue';
 import AppFooter from '@/components/layout/AppFooter.vue';
 
 const route = useRoute();
@@ -276,6 +279,7 @@ const handleFormSuccess = (message: string) => {
 .public-page {
   min-height: 100vh;
   background: var(--hgf-gray-bg);
+  margin-top: 80px; /* Account for fixed navbar */
 }
 
 /* Header */
